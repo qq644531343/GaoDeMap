@@ -12,7 +12,7 @@
 /**
  *  导航路线
  */
-@interface MANaviPolyline : NSObject<MAOverlay>
+@interface GaoNaviPolyline : NSObject<MAOverlay>
 
 @property (nonatomic, assign) MANaviAnnotationType type;
 @property (nonatomic, strong) MAPolyline *polyline;

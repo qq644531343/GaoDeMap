@@ -22,6 +22,8 @@
 
 @property (nonatomic ,strong) OutNaviViewController *naviVC;
 
+@property (nonatomic , strong) GaoBaseAnnotation *destAnnotation;
+
 @end
 
 @implementation ViewController
@@ -40,6 +42,7 @@
     [self addOutNaviView];
 }
 
+//添加地图
 -(void)addMap
 {
     self.mapview = [GaoMapView getMapViewWithFrame:CGRectMake(0, 0, GAO_SIZE.width, GAO_SIZE.height) parentView:self.view];
@@ -49,14 +52,17 @@
     __weak ViewController *weakself = self;
     self.mapview.mapManager.clickedAnnotation = ^(id<MAAnnotation> annotation, MAAnnotationView *annotationView){
         if(annotation == nil){
+            weakself.destAnnotation = nil;
             [weakself showOutDetailView:NO];
         }else {
+            weakself.destAnnotation = annotation;
             [weakself.detailView refreshWithData:annotation type:OutBottomTypeDest];
             [weakself showOutDetailView:YES];
         }
     };
 }
 
+//添加搜索Bar
 -(void)addSearchView
 {
     self.searchBar = [[UIView alloc] initWithFrame:CGRectMake(10, 30, GAO_SIZE.width - 20, 44)];
@@ -80,6 +86,7 @@
     self.mapview.logoCenter = self.searchBar.center;
 }
 
+//添加POI详情View
 -(void)addOutShowView
 {
     self.detailView = [OutBottomView addViewOn:self.view marginBottom:15 marginLeft:10];
@@ -96,17 +103,24 @@
     [self showOutDetailView:NO];
 }
 
+//顶部二级导航
 -(void)addOutNaviView
 {
     self.naviVC = [[OutNaviViewController alloc] init];
+    self.naviVC.parentVC = self;
     [self addChildViewController:_naviVC];
     [self.view addSubview:_naviVC.view];
     
     _naviVC.show = NO;
+    __weak ViewController *weakself = self;
+    _naviVC.backBtnClicked = ^(){
+        weakself.searchBar.hidden = NO;
+    };
 }
 
 #pragma mark - Action
 
+//显示隐藏 POI详情
 -(void)showOutDetailView:(BOOL)show
 {
     self.detailView.hidden = !show;
@@ -114,6 +128,7 @@
     [self.mapview setOutBtnBottomMargin:self.detailView.myHeight + 40 animation:YES];
 }
 
+//进入搜索
 -(void)redBtnClicked:(UIButton *)btn
 {
     NSLog(@"进入搜索");
@@ -122,9 +137,16 @@
     [self.navigationController pushViewController:search animated:YES];
 }
 
+//进入品牌墙
 -(void)blueBtnClicked:(UIButton *)btn
 {
     NSLog(@"进入品牌墙");
+}
+
+//导航去目标点
+-(void)naviToDestWithType:(int)type
+{
+    [self.mapview naviMineToDest:self.destAnnotation type:type];
 }
 
 

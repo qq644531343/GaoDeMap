@@ -91,7 +91,7 @@
     BOOL ji = YES, hui = YES, cu = YES, zhe = YES;
     
     UIImageView *imageCar = [[UIImageView alloc] initWithFrame:CGRectMake(LEFT_MARGIN, 20, 30, 30)];
-    imageCar.image = [UIImage imageNamed:@"gao_bus_blue"];
+    imageCar.image = [UIImage imageNamed:@"gao_navi_2H"];
     imageCar.contentMode = UIViewContentModeScaleAspectFit;
     imageCar.backgroundColor = [GaoColorWithRGB(0x3C9BFA) colorWithAlphaComponent:0.2];
     [self addSubview:imageCar];

@@ -67,6 +67,10 @@
     //单击地图获取POI信息
     self.touchPOIEnabled = YES;
     
+    //自定义定位样式
+    self.customizeUserLocationAccuracyCircleRepresentation = YES;
+    self.userTrackingMode = MAUserTrackingModeFollow;
+    
     [self addRelocation];
     [self addScaleView];
     [self setOutBtnBottomMargin:30 animation:NO];
@@ -190,7 +194,6 @@
     
     [self addAnnotations:annotations];
     
-    [self selectAnnotation:[annotations firstObject] animated:YES];
 }
 
 #pragma mark - Clean
@@ -225,37 +228,63 @@
 
 #pragma mark - Test
 
-//导航相关
--(void)testNavi
+//导航至某点
+-(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type
 {
-    AMapGeoPoint *point1 = [AMapGeoPoint locationWithLatitude:39.910267 longitude:116.370888];
-    AMapGeoPoint *point2 = [AMapGeoPoint locationWithLatitude:39.989872 longitude:116.481956];
+    GaoBaseAnnotation *start = [[GaoBaseAnnotation alloc] init];
+    start.title = self.userLocation.title;
+    start.coordinate = self.userLocation.coordinate;
     
-    //公交
-//    [self.searchManager searchNaviBusWithStart:point1 dest:point2 strategy:0 cityCode:@"beijing" finish:^(NSError *error, AMapRoute *route) {
-//        
-//       MANaviRoute *navi = [MANaviRoute naviRouteForTransit:route.transits[0]];
-//        [navi addToMapView:self];
-//        
-//    }];
+    start.type = 1;
+    dest.type = 2;
     
-   
-    
-    //步行
-//    [self.searchManager searchNaviWalkWithStart:point1 dest:point2 finish:^(NSError *error, AMapRoute *route) {
-//       
-//       MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeWalking];
-//        [navi addToMapView:self];
-//    }];
-    
-    //自驾
-    [self.searchManager searchNaviDriveWithStart:point1 dest:point2 strategy:0 finish:^(NSError *error, AMapRoute *route) {
-        
-        MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeDrive];
-        [navi addToMapView:self];
+    [self naviFrom:start dest:dest type:type];
+}
 
-    }];
+//导航辅助方法
+-(void)naviFrom:(GaoBaseAnnotation *)src dest:(GaoBaseAnnotation *)dest type:(int)type
+{
+    [self addMyAnnotationBase:[NSArray arrayWithObjects:src,dest, nil]];
     
+    AMapGeoPoint *point1 = [AMapGeoPoint locationWithLatitude:src.coordinate.latitude longitude:src.coordinate.longitude];
+    AMapGeoPoint *point2 = [AMapGeoPoint locationWithLatitude:dest.coordinate.latitude longitude:dest.coordinate.longitude];
+
+    //自驾
+    if (type == 1) {
+        [self.searchManager searchNaviDriveWithStart:point1 dest:point2 strategy:0 finish:^(NSError *error, AMapRoute *route) {
+            
+            if (route.paths.count > 0) {
+                MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeDrive];
+                [navi addToMapView:self];
+            }else {
+                 XLog(@"没有自驾路线");
+            }
+        }];
+
+    }else if(type == 2){
+    //公交
+        [self.searchManager searchNaviBusWithStart:point1 dest:point2 strategy:0 cityCode:@"beijing" finish:^(NSError *error, AMapRoute *route) {
+            
+            if (route.transits.count > 0) {
+                MANaviRoute *navi = [MANaviRoute naviRouteForTransit:route.transits[0]];
+                [navi addToMapView:self];
+            }else {
+                XLog(@"没有公交路线");
+            }
+        }];
+        
+    }else if(type == 3){
+     //步行
+        [self.searchManager searchNaviWalkWithStart:point1 dest:point2 finish:^(NSError *error, AMapRoute *route) {
+            
+            if (route.paths.count > 0) {
+                MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeWalking];
+                [navi addToMapView:self];
+            }else {
+                XLog(@"没有步行路线");
+            }
+        }];
+    }
 }
 
 @end

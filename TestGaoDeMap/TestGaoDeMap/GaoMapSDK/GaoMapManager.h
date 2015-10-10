@@ -27,7 +27,15 @@ typedef void(^SelectedAnnotation)(id<MAAnnotation> annotation,MAAnnotationView *
 
 @property (nonatomic, weak) GaoBaseAnnotationView *selectAnnotationView;
 
+/**
+ *  Annotation点击响应
+ */
 @property (nonatomic, copy) SelectedAnnotation clickedAnnotation;
+
+/**
+ *  当前位置Annotation
+ */
+@property (nonatomic, strong) MAAnnotationView *userLocationAnnotationView;
 
 /**
  *  聚焦用户所在地

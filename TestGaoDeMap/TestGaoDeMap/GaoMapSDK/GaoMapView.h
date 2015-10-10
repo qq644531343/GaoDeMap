@@ -11,6 +11,7 @@
 @class GaoMapManager;
 @class GaoMapSearchManager;
 @class AMapTip;
+@class GaoBaseAnnotation;
 
 @interface GaoMapView : MAMapView
 
@@ -22,7 +23,13 @@
 
 @property (nonatomic ,readonly, strong) GaoMapSearchManager *searchManager;
 
--(void)testNavi;
+/**
+ *  导航至目标点
+ *
+ *  @param dest 目标点
+ *  @param type 1自驾 2公交 3步行
+ */
+-(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type;
 
 /**
  *  设置定位icon、缩放icon与地图底部的间距

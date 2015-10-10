@@ -10,7 +10,7 @@
 #import <AMapNaviKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchAPI.h>
 #import "MANaviAnnotation.h"
-#import "MANaviPolyline.h"
+#import "GaoNaviPolyline.h"
 #import "LineDashPolyline.h"
 
 /**

@@ -11,5 +11,7 @@
 @interface ViewController : UIViewController
 
 
+-(void)naviToDestWithType:(int)type;
+
 @end
 

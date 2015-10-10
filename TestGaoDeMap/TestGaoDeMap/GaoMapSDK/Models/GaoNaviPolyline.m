@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 AutoNavi. All rights reserved.
 //
 
-#import "MANaviPolyline.h"
+#import "GaoNaviPolyline.h"
 
-@implementation MANaviPolyline
+@implementation GaoNaviPolyline
 
 - (id)initWithPolyline:(MAPolyline *)polyline
 {

@@ -99,7 +99,7 @@
         
         if (stepPolyline != nil)
         {
-            MANaviPolyline *naviPolyline = [[MANaviPolyline alloc] initWithPolyline:stepPolyline];
+            GaoNaviPolyline *naviPolyline = [[GaoNaviPolyline alloc] initWithPolyline:stepPolyline];
             naviPolyline.type = MANaviAnnotationTypeWalking;
             
             [polylines addObject:naviPolyline];
@@ -145,7 +145,7 @@
     MAPolyline *busLinePolyline = [MANaviRoute polylineForBusLine:firstLine];
     if (busLinePolyline != nil)
     {
-        MANaviPolyline *naviPolyline = [[MANaviPolyline alloc] initWithPolyline:busLinePolyline];
+        GaoNaviPolyline *naviPolyline = [[GaoNaviPolyline alloc] initWithPolyline:busLinePolyline];
         naviPolyline.type = MANaviAnnotationTypeBus;
 
         [polylines addObject:naviPolyline];
@@ -432,7 +432,7 @@
         
         if (stepPolyline != nil)
         {
-            MANaviPolyline *naviPolyline = [[MANaviPolyline alloc] initWithPolyline:stepPolyline];
+            GaoNaviPolyline *naviPolyline = [[GaoNaviPolyline alloc] initWithPolyline:stepPolyline];
             naviPolyline.type = type;
             
             [polylines addObject:naviPolyline];

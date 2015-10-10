@@ -27,4 +27,7 @@
 
 @property (nonatomic ,strong) NSString *subtitle;
 
+//0 普通节点  1 起点  2 终点
+@property (nonatomic, readwrite) int type;
+
 @end

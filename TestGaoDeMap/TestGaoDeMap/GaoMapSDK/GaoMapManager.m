@@ -10,7 +10,7 @@
 #import "GaoMapHeaders.h"
 #import "CusAnnotationView.h"
 
-#import "MANaviPolyline.h"
+#import "GaoNaviPolyline.h"
 
 @implementation GaoMapManager
 
@@ -21,6 +21,14 @@
 
 -(void)setSelectAnnotationView:(GaoBaseAnnotationView *)selectAnnotation
 {
+    if ([selectAnnotation.annotation isKindOfClass:[GaoBaseAnnotation class]]) {
+        GaoBaseAnnotation *anno = (GaoBaseAnnotation *)selectAnnotation.annotation;
+        if (anno.type != 0) {
+            _selectAnnotationView = selectAnnotation;
+            return;
+        }
+    }
+    
     _selectAnnotationView.color = GaoAnnoColorBlue;
     _selectAnnotationView = selectAnnotation;
     selectAnnotation.color = GaoAnnoColorRed;
@@ -48,8 +56,29 @@
         annotationView = [self annotationViewForBase:annotation];
         annotationView.canShowCallout = NO;
         
+        GaoBaseAnnotationView *view = (GaoBaseAnnotationView *)annotationView;
+        if([(GaoBaseAnnotation *)annotation type] == 1){
+            view.labelText.text = nil;
+            view.image = [UIImage imageNamed:@"gao_anno_start"];
+        }else if([(GaoBaseAnnotation *)annotation type] == 2)
+        {
+            view.labelText.text = nil;
+            view.image = [UIImage imageNamed:@"gao_anno_end"];
+        }else {
+           
+        }
     }else if([annotation isKindOfClass:[MAUserLocation class]]){
-    
+         /* 自定义userLocation对应的annotationView. */
+        static NSString *userAnId = @"userAnId";
+        MAAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:userAnId];
+        if (annotationView == nil)
+        {
+            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:userAnId];
+        }
+        annotationView.image = [UIImage imageNamed:@"gao_mapArrow"];
+        self.userLocationAnnotationView = annotationView;
+        return annotationView;
+        
     }else {
         
     }
@@ -109,17 +138,24 @@
  */
 - (MAOverlayView *)mapView:(MAMapView *)mapView viewForOverlay:(id <MAOverlay>)overlay
 {
-    if ([overlay isKindOfClass:[MANaviPolyline class]])
+    if ([overlay isKindOfClass:[GaoNaviPolyline class]])
     {
-        MANaviPolyline *naviPolyline = (MANaviPolyline *)overlay;
+        GaoNaviPolyline *naviPolyline = (GaoNaviPolyline *)overlay;
         MAPolylineView *polylineRenderer = [[MAPolylineView alloc] initWithPolyline:naviPolyline.polyline];
         
-        polylineRenderer.lineWidth = 8;
+        polylineRenderer.lineWidth = 4;
         
         polylineRenderer.strokeColor=[UIColor
                                       redColor];
         
         return polylineRenderer;
+    }else if (overlay == mapView.userLocationAccuracyCircle) {
+            /* 自定义定位精度对应的MACircleView. */
+        MACircleView *accuracyCircleView = [[MACircleView alloc] initWithCircle:overlay];
+        accuracyCircleView.lineWidth    = 1.f;
+        accuracyCircleView.strokeColor  = [UIColor blueColor];
+        accuracyCircleView.fillColor    = [UIColor colorWithRed:1 green:0 blue:0 alpha:.1];
+        return accuracyCircleView;
     }
 
     return nil;
@@ -136,7 +172,15 @@
  */
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
-
+    if (!updatingLocation && self.userLocationAnnotationView != nil)
+    {
+        [UIView animateWithDuration:0.1 animations:^{
+            
+            double degree = userLocation.heading.trueHeading - self.map.rotationDegree;
+            self.userLocationAnnotationView.transform = CGAffineTransformMakeRotation(degree * M_PI / 180.f );
+            
+        }];
+    }
 }
 
 /*!
@@ -182,6 +226,7 @@
     annotation.title = touch.name;
     [self.map cleanMapView];
     [self.map addMyAnnotationBase:[NSArray arrayWithObject:annotation]];
+    [self.map selectAnnotation:annotation animated:YES];
 }
 
 #pragma mark - ViewTool

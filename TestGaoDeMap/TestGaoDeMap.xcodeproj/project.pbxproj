@@ -15,7 +15,7 @@
 		0929ABFC1BBBDE2D00686046 /* FaceOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABD31BBBDE2D00686046 /* FaceOverlay.m */; };
 		0929ABFE1BBBDE2D00686046 /* LineDashPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABD71BBBDE2D00686046 /* LineDashPolyline.m */; };
 		0929AC001BBBDE2D00686046 /* MANaviAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABDB1BBBDE2D00686046 /* MANaviAnnotation.m */; };
-		0929AC011BBBDE2D00686046 /* MANaviPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABDD1BBBDE2D00686046 /* MANaviPolyline.m */; };
+		0929AC011BBBDE2D00686046 /* GaoNaviPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABDD1BBBDE2D00686046 /* GaoNaviPolyline.m */; };
 		0929AC021BBBDE2D00686046 /* MANaviRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABDF1BBBDE2D00686046 /* MANaviRoute.m */; };
 		0929AC031BBBDE2D00686046 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABE11BBBDE2D00686046 /* POIAnnotation.m */; };
 		0929AC051BBBDE2D00686046 /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABE61BBBDE2D00686046 /* CommonUtility.m */; };
@@ -38,10 +38,10 @@
 		0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BB1BBA8BC100FF85AD /* GaoMapView.m */; };
 		0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */; };
 		0937D9C21BBA956800FF85AD /* GaoMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9C11BBA956800FF85AD /* GaoMapManager.m */; };
+		094B9D811BC8C69400AB64BC /* OutTopBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 094B9D801BC8C69400AB64BC /* OutTopBarView.m */; settings = {ASSET_TAGS = (); }; };
 		09667AD41BAFA1F900C99397 /* GaoBaseAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */; };
 		09667AD61BAFB0B700C99397 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09667AD51BAFB0B700C99397 /* 1.jpg */; };
 		09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
-		09CC99A91BC7D03B009472E2 /* OutNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A81BC7D03B009472E2 /* OutNaviView.m */; settings = {ASSET_TAGS = (); }; };
 		BD3954DB09BA33770B734C15 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB895F2322D4EA44F816DB86 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +72,8 @@
 		0929ABD71BBBDE2D00686046 /* LineDashPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDashPolyline.m; sourceTree = "<group>"; };
 		0929ABDA1BBBDE2D00686046 /* MANaviAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotation.h; sourceTree = "<group>"; };
 		0929ABDB1BBBDE2D00686046 /* MANaviAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotation.m; sourceTree = "<group>"; };
-		0929ABDC1BBBDE2D00686046 /* MANaviPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviPolyline.h; sourceTree = "<group>"; };
-		0929ABDD1BBBDE2D00686046 /* MANaviPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviPolyline.m; sourceTree = "<group>"; };
+		0929ABDC1BBBDE2D00686046 /* GaoNaviPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoNaviPolyline.h; sourceTree = "<group>"; };
+		0929ABDD1BBBDE2D00686046 /* GaoNaviPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoNaviPolyline.m; sourceTree = "<group>"; };
 		0929ABDE1BBBDE2D00686046 /* MANaviRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviRoute.h; sourceTree = "<group>"; };
 		0929ABDF1BBBDE2D00686046 /* MANaviRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviRoute.m; sourceTree = "<group>"; };
 		0929ABE01BBBDE2D00686046 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIAnnotation.h; sourceTree = "<group>"; };
@@ -117,13 +117,14 @@
 		0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapTool.m; sourceTree = "<group>"; };
 		0937D9C01BBA956800FF85AD /* GaoMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapManager.h; sourceTree = "<group>"; };
 		0937D9C11BBA956800FF85AD /* GaoMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapManager.m; sourceTree = "<group>"; };
+		094B9D7F1BC8C69400AB64BC /* OutTopBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutTopBarView.h; sourceTree = "<group>"; };
+		094B9D801BC8C69400AB64BC /* OutTopBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutTopBarView.m; sourceTree = "<group>"; };
+		094B9D821BC8EE3200AB64BC /* hangzhou.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = hangzhou.gpx; sourceTree = "<group>"; };
 		09667AD21BAFA1F900C99397 /* GaoBaseAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GaoBaseAnnotation.h; path = ../GaoBaseAnnotation.h; sourceTree = "<group>"; };
 		09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GaoBaseAnnotation.m; path = ../GaoBaseAnnotation.m; sourceTree = "<group>"; };
 		09667AD51BAFB0B700C99397 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		09CC99A41BC7CFF8009472E2 /* OutNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutNaviViewController.h; sourceTree = "<group>"; };
 		09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutNaviViewController.m; sourceTree = "<group>"; };
-		09CC99A71BC7D03B009472E2 /* OutNaviView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutNaviView.h; sourceTree = "<group>"; };
-		09CC99A81BC7D03B009472E2 /* OutNaviView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutNaviView.m; sourceTree = "<group>"; };
 		1ACD651A3E696762EB3F8E97 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6883A3CAA5F1514EF2B8CB55 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BB895F2322D4EA44F816DB86 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,8 +173,8 @@
 				0929ABD71BBBDE2D00686046 /* LineDashPolyline.m */,
 				0929ABDA1BBBDE2D00686046 /* MANaviAnnotation.h */,
 				0929ABDB1BBBDE2D00686046 /* MANaviAnnotation.m */,
-				0929ABDC1BBBDE2D00686046 /* MANaviPolyline.h */,
-				0929ABDD1BBBDE2D00686046 /* MANaviPolyline.m */,
+				0929ABDC1BBBDE2D00686046 /* GaoNaviPolyline.h */,
+				0929ABDD1BBBDE2D00686046 /* GaoNaviPolyline.m */,
 				0929ABDE1BBBDE2D00686046 /* MANaviRoute.h */,
 				0929ABDF1BBBDE2D00686046 /* MANaviRoute.m */,
 				0929ABE01BBBDE2D00686046 /* POIAnnotation.h */,
@@ -227,8 +228,8 @@
 			children = (
 				0906FEA81BC770A90041F800 /* OutBottomView.h */,
 				0906FEA91BC770A90041F800 /* OutBottomView.m */,
-				09CC99A71BC7D03B009472E2 /* OutNaviView.h */,
-				09CC99A81BC7D03B009472E2 /* OutNaviView.m */,
+				094B9D7F1BC8C69400AB64BC /* OutTopBarView.h */,
+				094B9D801BC8C69400AB64BC /* OutTopBarView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -266,6 +267,7 @@
 				093090861BABD58A00AA4E72 /* Images.xcassets */,
 				093090881BABD58A00AA4E72 /* LaunchScreen.xib */,
 				09667AD51BAFB0B700C99397 /* 1.jpg */,
+				094B9D821BC8EE3200AB64BC /* hangzhou.gpx */,
 				093090791BABD58A00AA4E72 /* Supporting Files */,
 			);
 			path = TestGaoDeMap;
@@ -472,7 +474,7 @@
 				0929AC071BBBDE2D00686046 /* CusAnnotationView.m in Sources */,
 				0929AC031BBBDE2D00686046 /* POIAnnotation.m in Sources */,
 				09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */,
-				0929AC011BBBDE2D00686046 /* MANaviPolyline.m in Sources */,
+				0929AC011BBBDE2D00686046 /* GaoNaviPolyline.m in Sources */,
 				0929ABFE1BBBDE2D00686046 /* LineDashPolyline.m in Sources */,
 				092A5ACF1BC667F800A57CCC /* OutSearchViewController.m in Sources */,
 				0929AC081BBBDE2D00686046 /* CustomCalloutView.m in Sources */,
@@ -488,11 +490,11 @@
 				093090821BABD58A00AA4E72 /* ViewController.m in Sources */,
 				0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */,
 				0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */,
-				09CC99A91BC7D03B009472E2 /* OutNaviView.m in Sources */,
 				0906FEAA1BC770A90041F800 /* OutBottomView.m in Sources */,
 				0930907C1BABD58A00AA4E72 /* main.m in Sources */,
 				0929AC061BBBDE2D00686046 /* AnimatedAnnotationView.m in Sources */,
 				0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */,
+				094B9D811BC8C69400AB64BC /* OutTopBarView.m in Sources */,
 				0929AB911BBB829000686046 /* GaoMapSearchManager.m in Sources */,
 				0929ABFC1BBBDE2D00686046 /* FaceOverlay.m in Sources */,
 			);
