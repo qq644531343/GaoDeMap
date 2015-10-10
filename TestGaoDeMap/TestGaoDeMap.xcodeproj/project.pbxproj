@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0906FEAA1BC770A90041F800 /* OutBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0906FEA91BC770A90041F800 /* OutBottomView.m */; settings = {ASSET_TAGS = (); }; };
+		0929AB911BBB829000686046 /* GaoMapSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929AB901BBB829000686046 /* GaoMapSearchManager.m */; };
+		0929AB931BBB84A700686046 /* gaopoi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0929AB921BBB84A700686046 /* gaopoi.plist */; };
+		0929ABF91BBBDE2D00686046 /* AnimatedAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABCD1BBBDE2D00686046 /* AnimatedAnnotation.m */; };
+		0929ABFB1BBBDE2D00686046 /* CustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABD11BBBDE2D00686046 /* CustomOverlay.m */; };
+		0929ABFC1BBBDE2D00686046 /* FaceOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABD31BBBDE2D00686046 /* FaceOverlay.m */; };
+		0929ABFE1BBBDE2D00686046 /* LineDashPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABD71BBBDE2D00686046 /* LineDashPolyline.m */; };
+		0929AC001BBBDE2D00686046 /* MANaviAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABDB1BBBDE2D00686046 /* MANaviAnnotation.m */; };
+		0929AC011BBBDE2D00686046 /* MANaviPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABDD1BBBDE2D00686046 /* MANaviPolyline.m */; };
+		0929AC021BBBDE2D00686046 /* MANaviRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABDF1BBBDE2D00686046 /* MANaviRoute.m */; };
+		0929AC031BBBDE2D00686046 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABE11BBBDE2D00686046 /* POIAnnotation.m */; };
+		0929AC051BBBDE2D00686046 /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABE61BBBDE2D00686046 /* CommonUtility.m */; };
+		0929AC061BBBDE2D00686046 /* AnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABE91BBBDE2D00686046 /* AnimatedAnnotationView.m */; };
+		0929AC071BBBDE2D00686046 /* CusAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABEB1BBBDE2D00686046 /* CusAnnotationView.m */; };
+		0929AC081BBBDE2D00686046 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABED1BBBDE2D00686046 /* CustomCalloutView.m */; };
+		0929AC091BBBDE2D00686046 /* FaceOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABEF1BBBDE2D00686046 /* FaceOverlayView.m */; };
+		0929AC0B1BBBDE2D00686046 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABF31BBBDE2D00686046 /* MANaviAnnotationView.m */; };
+		092A5ACB1BC65B2200A57CCC /* GaoBaseAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
+		092A5ACF1BC667F800A57CCC /* OutSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0930907C1BABD58A00AA4E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907B1BABD58A00AA4E72 /* main.m */; };
+		0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907E1BABD58A00AA4E72 /* AppDelegate.m */; };
+		093090821BABD58A00AA4E72 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093090811BABD58A00AA4E72 /* ViewController.m */; };
+		093090851BABD58A00AA4E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093090831BABD58A00AA4E72 /* Main.storyboard */; };
+		093090871BABD58A00AA4E72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093090861BABD58A00AA4E72 /* Images.xcassets */; };
+		0930908A1BABD58A00AA4E72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093090881BABD58A00AA4E72 /* LaunchScreen.xib */; };
+		093090961BABD58A00AA4E72 /* TestGaoDeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 093090951BABD58A00AA4E72 /* TestGaoDeMapTests.m */; };
+		093090A31BABDC4B00AA4E72 /* GaoMapConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 093090A21BABDC4B00AA4E72 /* GaoMapConfig.m */; };
+		0937D9B91BBA769700FF85AD /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0937D9B81BBA769700FF85AD /* ReadMe.txt */; };
+		0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BB1BBA8BC100FF85AD /* GaoMapView.m */; };
+		0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */; };
+		0937D9C21BBA956800FF85AD /* GaoMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9C11BBA956800FF85AD /* GaoMapManager.m */; };
+		09667AD41BAFA1F900C99397 /* GaoBaseAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */; };
+		09667AD61BAFB0B700C99397 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09667AD51BAFB0B700C99397 /* 1.jpg */; };
+		09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
+		09CC99A91BC7D03B009472E2 /* OutNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A81BC7D03B009472E2 /* OutNaviView.m */; settings = {ASSET_TAGS = (); }; };
+		BD3954DB09BA33770B734C15 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB895F2322D4EA44F816DB86 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		093090901BABD58A00AA4E72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0930906E1BABD58A00AA4E72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 093090751BABD58A00AA4E72;
+			remoteInfo = TestGaoDeMap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0906FEA81BC770A90041F800 /* OutBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutBottomView.h; sourceTree = "<group>"; };
+		0906FEA91BC770A90041F800 /* OutBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutBottomView.m; sourceTree = "<group>"; };
+		0925CA621BC3C05900B2C46E /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		0929AB8F1BBB829000686046 /* GaoMapSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapSearchManager.h; sourceTree = "<group>"; };
+		0929AB901BBB829000686046 /* GaoMapSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapSearchManager.m; sourceTree = "<group>"; };
+		0929AB921BBB84A700686046 /* gaopoi.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gaopoi.plist; sourceTree = "<group>"; };
+		0929ABCC1BBBDE2D00686046 /* AnimatedAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedAnnotation.h; sourceTree = "<group>"; };
+		0929ABCD1BBBDE2D00686046 /* AnimatedAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedAnnotation.m; sourceTree = "<group>"; };
+		0929ABD01BBBDE2D00686046 /* CustomOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOverlay.h; sourceTree = "<group>"; };
+		0929ABD11BBBDE2D00686046 /* CustomOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOverlay.m; sourceTree = "<group>"; };
+		0929ABD21BBBDE2D00686046 /* FaceOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceOverlay.h; sourceTree = "<group>"; };
+		0929ABD31BBBDE2D00686046 /* FaceOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceOverlay.m; sourceTree = "<group>"; };
+		0929ABD61BBBDE2D00686046 /* LineDashPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDashPolyline.h; sourceTree = "<group>"; };
+		0929ABD71BBBDE2D00686046 /* LineDashPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDashPolyline.m; sourceTree = "<group>"; };
+		0929ABDA1BBBDE2D00686046 /* MANaviAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotation.h; sourceTree = "<group>"; };
+		0929ABDB1BBBDE2D00686046 /* MANaviAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotation.m; sourceTree = "<group>"; };
+		0929ABDC1BBBDE2D00686046 /* MANaviPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviPolyline.h; sourceTree = "<group>"; };
+		0929ABDD1BBBDE2D00686046 /* MANaviPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviPolyline.m; sourceTree = "<group>"; };
+		0929ABDE1BBBDE2D00686046 /* MANaviRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviRoute.h; sourceTree = "<group>"; };
+		0929ABDF1BBBDE2D00686046 /* MANaviRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviRoute.m; sourceTree = "<group>"; };
+		0929ABE01BBBDE2D00686046 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIAnnotation.h; sourceTree = "<group>"; };
+		0929ABE11BBBDE2D00686046 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIAnnotation.m; sourceTree = "<group>"; };
+		0929ABE61BBBDE2D00686046 /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
+		0929ABE81BBBDE2D00686046 /* AnimatedAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedAnnotationView.h; sourceTree = "<group>"; };
+		0929ABE91BBBDE2D00686046 /* AnimatedAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedAnnotationView.m; sourceTree = "<group>"; };
+		0929ABEA1BBBDE2D00686046 /* CusAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusAnnotationView.h; sourceTree = "<group>"; };
+		0929ABEB1BBBDE2D00686046 /* CusAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusAnnotationView.m; sourceTree = "<group>"; };
+		0929ABEC1BBBDE2D00686046 /* CustomCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCalloutView.h; sourceTree = "<group>"; };
+		0929ABED1BBBDE2D00686046 /* CustomCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCalloutView.m; sourceTree = "<group>"; };
+		0929ABEE1BBBDE2D00686046 /* FaceOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceOverlayView.h; sourceTree = "<group>"; };
+		0929ABEF1BBBDE2D00686046 /* FaceOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceOverlayView.m; sourceTree = "<group>"; };
+		0929ABF21BBBDE2D00686046 /* MANaviAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotationView.h; sourceTree = "<group>"; };
+		0929ABF31BBBDE2D00686046 /* MANaviAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotationView.m; sourceTree = "<group>"; };
+		092A5AC91BC65B2200A57CCC /* GaoBaseAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoBaseAnnotationView.h; sourceTree = "<group>"; };
+		092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoBaseAnnotationView.m; sourceTree = "<group>"; };
+		092A5ACD1BC667F800A57CCC /* OutSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutSearchViewController.h; sourceTree = "<group>"; };
+		092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutSearchViewController.m; sourceTree = "<group>"; };
+		093090761BABD58A00AA4E72 /* TestGaoDeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGaoDeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0930907A1BABD58A00AA4E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0930907B1BABD58A00AA4E72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0930907D1BABD58A00AA4E72 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0930907E1BABD58A00AA4E72 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		093090801BABD58A00AA4E72 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		093090811BABD58A00AA4E72 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		093090841BABD58A00AA4E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		093090861BABD58A00AA4E72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		093090891BABD58A00AA4E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0930908F1BABD58A00AA4E72 /* TestGaoDeMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestGaoDeMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		093090941BABD58A00AA4E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		093090951BABD58A00AA4E72 /* TestGaoDeMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGaoDeMapTests.m; sourceTree = "<group>"; };
+		0930909F1BABD8F000AA4E72 /* my.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = my.pch; sourceTree = "<group>"; };
+		093090A11BABDC4B00AA4E72 /* GaoMapConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapConfig.h; sourceTree = "<group>"; };
+		093090A21BABDC4B00AA4E72 /* GaoMapConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapConfig.m; sourceTree = "<group>"; };
+		093090A41BABDD2800AA4E72 /* GaoMapHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapHeaders.h; sourceTree = "<group>"; };
+		0937D9B81BBA769700FF85AD /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		0937D9BA1BBA8BC100FF85AD /* GaoMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapView.h; sourceTree = "<group>"; };
+		0937D9BB1BBA8BC100FF85AD /* GaoMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapView.m; sourceTree = "<group>"; };
+		0937D9BD1BBA90B400FF85AD /* GaoMapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapTool.h; sourceTree = "<group>"; };
+		0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapTool.m; sourceTree = "<group>"; };
+		0937D9C01BBA956800FF85AD /* GaoMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapManager.h; sourceTree = "<group>"; };
+		0937D9C11BBA956800FF85AD /* GaoMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapManager.m; sourceTree = "<group>"; };
+		09667AD21BAFA1F900C99397 /* GaoBaseAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GaoBaseAnnotation.h; path = ../GaoBaseAnnotation.h; sourceTree = "<group>"; };
+		09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GaoBaseAnnotation.m; path = ../GaoBaseAnnotation.m; sourceTree = "<group>"; };
+		09667AD51BAFB0B700C99397 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		09CC99A41BC7CFF8009472E2 /* OutNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutNaviViewController.h; sourceTree = "<group>"; };
+		09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutNaviViewController.m; sourceTree = "<group>"; };
+		09CC99A71BC7D03B009472E2 /* OutNaviView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutNaviView.h; sourceTree = "<group>"; };
+		09CC99A81BC7D03B009472E2 /* OutNaviView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutNaviView.m; sourceTree = "<group>"; };
+		1ACD651A3E696762EB3F8E97 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6883A3CAA5F1514EF2B8CB55 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BB895F2322D4EA44F816DB86 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		093090731BABD58A00AA4E72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3954DB09BA33770B734C15 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0930908C1BABD58A00AA4E72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0613F5DFFEFF5CD2D88DF796 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1ACD651A3E696762EB3F8E97 /* Pods.debug.xcconfig */,
+				6883A3CAA5F1514EF2B8CB55 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0929ABC91BBBDE2D00686046 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09667AD21BAFA1F900C99397 /* GaoBaseAnnotation.h */,
+				09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */,
+				0929ABCC1BBBDE2D00686046 /* AnimatedAnnotation.h */,
+				0929ABCD1BBBDE2D00686046 /* AnimatedAnnotation.m */,
+				0929ABD01BBBDE2D00686046 /* CustomOverlay.h */,
+				0929ABD11BBBDE2D00686046 /* CustomOverlay.m */,
+				0929ABD21BBBDE2D00686046 /* FaceOverlay.h */,
+				0929ABD31BBBDE2D00686046 /* FaceOverlay.m */,
+				0929ABD61BBBDE2D00686046 /* LineDashPolyline.h */,
+				0929ABD71BBBDE2D00686046 /* LineDashPolyline.m */,
+				0929ABDA1BBBDE2D00686046 /* MANaviAnnotation.h */,
+				0929ABDB1BBBDE2D00686046 /* MANaviAnnotation.m */,
+				0929ABDC1BBBDE2D00686046 /* MANaviPolyline.h */,
+				0929ABDD1BBBDE2D00686046 /* MANaviPolyline.m */,
+				0929ABDE1BBBDE2D00686046 /* MANaviRoute.h */,
+				0929ABDF1BBBDE2D00686046 /* MANaviRoute.m */,
+				0929ABE01BBBDE2D00686046 /* POIAnnotation.h */,
+				0929ABE11BBBDE2D00686046 /* POIAnnotation.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0929ABE41BBBDE2D00686046 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0925CA621BC3C05900B2C46E /* CommonUtility.h */,
+				0929ABE61BBBDE2D00686046 /* CommonUtility.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		0929ABE71BBBDE2D00686046 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0929ABE81BBBDE2D00686046 /* AnimatedAnnotationView.h */,
+				0929ABE91BBBDE2D00686046 /* AnimatedAnnotationView.m */,
+				0929ABEA1BBBDE2D00686046 /* CusAnnotationView.h */,
+				0929ABEB1BBBDE2D00686046 /* CusAnnotationView.m */,
+				0929ABEC1BBBDE2D00686046 /* CustomCalloutView.h */,
+				0929ABED1BBBDE2D00686046 /* CustomCalloutView.m */,
+				0929ABEE1BBBDE2D00686046 /* FaceOverlayView.h */,
+				0929ABEF1BBBDE2D00686046 /* FaceOverlayView.m */,
+				0929ABF21BBBDE2D00686046 /* MANaviAnnotationView.h */,
+				0929ABF31BBBDE2D00686046 /* MANaviAnnotationView.m */,
+				092A5AC91BC65B2200A57CCC /* GaoBaseAnnotationView.h */,
+				092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		092A5ACC1BC6608900A57CCC /* OutMap */ = {
+			isa = PBXGroup;
+			children = (
+				092A5AD01BC66A6200A57CCC /* View */,
+				092A5ACD1BC667F800A57CCC /* OutSearchViewController.h */,
+				092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */,
+				09CC99A41BC7CFF8009472E2 /* OutNaviViewController.h */,
+				09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */,
+			);
+			path = OutMap;
+			sourceTree = "<group>";
+		};
+		092A5AD01BC66A6200A57CCC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0906FEA81BC770A90041F800 /* OutBottomView.h */,
+				0906FEA91BC770A90041F800 /* OutBottomView.m */,
+				09CC99A71BC7D03B009472E2 /* OutNaviView.h */,
+				09CC99A81BC7D03B009472E2 /* OutNaviView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0930906D1BABD58A00AA4E72 = {
+			isa = PBXGroup;
+			children = (
+				093090781BABD58A00AA4E72 /* TestGaoDeMap */,
+				093090921BABD58A00AA4E72 /* TestGaoDeMapTests */,
+				093090771BABD58A00AA4E72 /* Products */,
+				0613F5DFFEFF5CD2D88DF796 /* Pods */,
+				64B1F35FFE32FC5694529CFA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		093090771BABD58A00AA4E72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				093090761BABD58A00AA4E72 /* TestGaoDeMap.app */,
+				0930908F1BABD58A00AA4E72 /* TestGaoDeMapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		093090781BABD58A00AA4E72 /* TestGaoDeMap */ = {
+			isa = PBXGroup;
+			children = (
+				092A5ACC1BC6608900A57CCC /* OutMap */,
+				093090A01BABDC2200AA4E72 /* GaoMapSDK */,
+				0930907D1BABD58A00AA4E72 /* AppDelegate.h */,
+				0930907E1BABD58A00AA4E72 /* AppDelegate.m */,
+				093090801BABD58A00AA4E72 /* ViewController.h */,
+				093090811BABD58A00AA4E72 /* ViewController.m */,
+				093090831BABD58A00AA4E72 /* Main.storyboard */,
+				093090861BABD58A00AA4E72 /* Images.xcassets */,
+				093090881BABD58A00AA4E72 /* LaunchScreen.xib */,
+				09667AD51BAFB0B700C99397 /* 1.jpg */,
+				093090791BABD58A00AA4E72 /* Supporting Files */,
+			);
+			path = TestGaoDeMap;
+			sourceTree = "<group>";
+		};
+		093090791BABD58A00AA4E72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0930907A1BABD58A00AA4E72 /* Info.plist */,
+				0930907B1BABD58A00AA4E72 /* main.m */,
+				0930909F1BABD8F000AA4E72 /* my.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		093090921BABD58A00AA4E72 /* TestGaoDeMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				093090951BABD58A00AA4E72 /* TestGaoDeMapTests.m */,
+				093090931BABD58A00AA4E72 /* Supporting Files */,
+			);
+			path = TestGaoDeMapTests;
+			sourceTree = "<group>";
+		};
+		093090931BABD58A00AA4E72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				093090941BABD58A00AA4E72 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		093090A01BABDC2200AA4E72 /* GaoMapSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0929ABC91BBBDE2D00686046 /* Models */,
+				0929ABE41BBBDE2D00686046 /* Utility */,
+				0929ABE71BBBDE2D00686046 /* Views */,
+				093090A41BABDD2800AA4E72 /* GaoMapHeaders.h */,
+				093090A11BABDC4B00AA4E72 /* GaoMapConfig.h */,
+				093090A21BABDC4B00AA4E72 /* GaoMapConfig.m */,
+				0937D9B81BBA769700FF85AD /* ReadMe.txt */,
+				0937D9BA1BBA8BC100FF85AD /* GaoMapView.h */,
+				0937D9BB1BBA8BC100FF85AD /* GaoMapView.m */,
+				0937D9BD1BBA90B400FF85AD /* GaoMapTool.h */,
+				0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */,
+				0937D9C01BBA956800FF85AD /* GaoMapManager.h */,
+				0937D9C11BBA956800FF85AD /* GaoMapManager.m */,
+				0929AB8F1BBB829000686046 /* GaoMapSearchManager.h */,
+				0929AB901BBB829000686046 /* GaoMapSearchManager.m */,
+				0929AB921BBB84A700686046 /* gaopoi.plist */,
+			);
+			path = GaoMapSDK;
+			sourceTree = "<group>";
+		};
+		64B1F35FFE32FC5694529CFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB895F2322D4EA44F816DB86 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		093090751BABD58A00AA4E72 /* TestGaoDeMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 093090991BABD58A00AA4E72 /* Build configuration list for PBXNativeTarget "TestGaoDeMap" */;
+			buildPhases = (
+				BF8840053B8DB7C586B843CD /* Check Pods Manifest.lock */,
+				093090721BABD58A00AA4E72 /* Sources */,
+				093090731BABD58A00AA4E72 /* Frameworks */,
+				093090741BABD58A00AA4E72 /* Resources */,
+				B53B25E9875CBC195C1515C2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestGaoDeMap;
+			productName = TestGaoDeMap;
+			productReference = 093090761BABD58A00AA4E72 /* TestGaoDeMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0930908E1BABD58A00AA4E72 /* TestGaoDeMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0930909C1BABD58A00AA4E72 /* Build configuration list for PBXNativeTarget "TestGaoDeMapTests" */;
+			buildPhases = (
+				0930908B1BABD58A00AA4E72 /* Sources */,
+				0930908C1BABD58A00AA4E72 /* Frameworks */,
+				0930908D1BABD58A00AA4E72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				093090911BABD58A00AA4E72 /* PBXTargetDependency */,
+			);
+			name = TestGaoDeMapTests;
+			productName = TestGaoDeMapTests;
+			productReference = 0930908F1BABD58A00AA4E72 /* TestGaoDeMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0930906E1BABD58A00AA4E72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = libo;
+				TargetAttributes = {
+					093090751BABD58A00AA4E72 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					0930908E1BABD58A00AA4E72 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 093090751BABD58A00AA4E72;
+					};
+				};
+			};
+			buildConfigurationList = 093090711BABD58A00AA4E72 /* Build configuration list for PBXProject "TestGaoDeMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0930906D1BABD58A00AA4E72;
+			productRefGroup = 093090771BABD58A00AA4E72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				093090751BABD58A00AA4E72 /* TestGaoDeMap */,
+				0930908E1BABD58A00AA4E72 /* TestGaoDeMapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		093090741BABD58A00AA4E72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093090851BABD58A00AA4E72 /* Main.storyboard in Resources */,
+				09667AD61BAFB0B700C99397 /* 1.jpg in Resources */,
+				0930908A1BABD58A00AA4E72 /* LaunchScreen.xib in Resources */,
+				0929AB931BBB84A700686046 /* gaopoi.plist in Resources */,
+				0937D9B91BBA769700FF85AD /* ReadMe.txt in Resources */,
+				093090871BABD58A00AA4E72 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0930908D1BABD58A00AA4E72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B53B25E9875CBC195C1515C2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF8840053B8DB7C586B843CD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		093090721BABD58A00AA4E72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0929AC001BBBDE2D00686046 /* MANaviAnnotation.m in Sources */,
+				09667AD41BAFA1F900C99397 /* GaoBaseAnnotation.m in Sources */,
+				0929AC071BBBDE2D00686046 /* CusAnnotationView.m in Sources */,
+				0929AC031BBBDE2D00686046 /* POIAnnotation.m in Sources */,
+				09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */,
+				0929AC011BBBDE2D00686046 /* MANaviPolyline.m in Sources */,
+				0929ABFE1BBBDE2D00686046 /* LineDashPolyline.m in Sources */,
+				092A5ACF1BC667F800A57CCC /* OutSearchViewController.m in Sources */,
+				0929AC081BBBDE2D00686046 /* CustomCalloutView.m in Sources */,
+				093090A31BABDC4B00AA4E72 /* GaoMapConfig.m in Sources */,
+				0929AC091BBBDE2D00686046 /* FaceOverlayView.m in Sources */,
+				0929AC051BBBDE2D00686046 /* CommonUtility.m in Sources */,
+				092A5ACB1BC65B2200A57CCC /* GaoBaseAnnotationView.m in Sources */,
+				0929ABFB1BBBDE2D00686046 /* CustomOverlay.m in Sources */,
+				0937D9C21BBA956800FF85AD /* GaoMapManager.m in Sources */,
+				0929AC0B1BBBDE2D00686046 /* MANaviAnnotationView.m in Sources */,
+				0929ABF91BBBDE2D00686046 /* AnimatedAnnotation.m in Sources */,
+				0929AC021BBBDE2D00686046 /* MANaviRoute.m in Sources */,
+				093090821BABD58A00AA4E72 /* ViewController.m in Sources */,
+				0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */,
+				0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */,
+				09CC99A91BC7D03B009472E2 /* OutNaviView.m in Sources */,
+				0906FEAA1BC770A90041F800 /* OutBottomView.m in Sources */,
+				0930907C1BABD58A00AA4E72 /* main.m in Sources */,
+				0929AC061BBBDE2D00686046 /* AnimatedAnnotationView.m in Sources */,
+				0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */,
+				0929AB911BBB829000686046 /* GaoMapSearchManager.m in Sources */,
+				0929ABFC1BBBDE2D00686046 /* FaceOverlay.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0930908B1BABD58A00AA4E72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093090961BABD58A00AA4E72 /* TestGaoDeMapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		093090911BABD58A00AA4E72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 093090751BABD58A00AA4E72 /* TestGaoDeMap */;
+			targetProxy = 093090901BABD58A00AA4E72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		093090831BABD58A00AA4E72 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				093090841BABD58A00AA4E72 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		093090881BABD58A00AA4E72 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				093090891BABD58A00AA4E72 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		093090971BABD58A00AA4E72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		093090981BABD58A00AA4E72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0930909A1BABD58A00AA4E72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ACD651A3E696762EB3F8E97 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "${SRCROOT}/TestGaoDeMap/my.pch";
+				INFOPLIST_FILE = TestGaoDeMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zuobao.chongwoba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0930909B1BABD58A00AA4E72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6883A3CAA5F1514EF2B8CB55 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "${SRCROOT}/TestGaoDeMap/my.pch";
+				INFOPLIST_FILE = TestGaoDeMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zuobao.chongwoba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0930909D1BABD58A00AA4E72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TestGaoDeMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestGaoDeMap.app/TestGaoDeMap";
+			};
+			name = Debug;
+		};
+		0930909E1BABD58A00AA4E72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TestGaoDeMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestGaoDeMap.app/TestGaoDeMap";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		093090711BABD58A00AA4E72 /* Build configuration list for PBXProject "TestGaoDeMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				093090971BABD58A00AA4E72 /* Debug */,
+				093090981BABD58A00AA4E72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		093090991BABD58A00AA4E72 /* Build configuration list for PBXNativeTarget "TestGaoDeMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0930909A1BABD58A00AA4E72 /* Debug */,
+				0930909B1BABD58A00AA4E72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0930909C1BABD58A00AA4E72 /* Build configuration list for PBXNativeTarget "TestGaoDeMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0930909D1BABD58A00AA4E72 /* Debug */,
+				0930909E1BABD58A00AA4E72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0930906E1BABD58A00AA4E72 /* Project object */;
+}
