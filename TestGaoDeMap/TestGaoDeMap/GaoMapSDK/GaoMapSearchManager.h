@@ -39,6 +39,18 @@ typedef void(^NaviSearchFinished)(NSError *error, AMapRoute *route);
 typedef void(^InputTipsFinished)(NSError *error, NSArray *tips);
 
 /**
+ *  地理编码 结果返回
+ *  数组元素为AMapGeocode
+ **/
+typedef void(^GeoFinished)(NSError *error, NSArray *geocodes);
+
+/**
+ *  地理逆编码 结果返回
+ *  数组元素为AMapReGeocode
+ **/
+typedef void(^RevserGeoFinished)(NSError *error, AMapReGeocode *res);
+
+/**
  *  地图搜索、导航等的内容管理
  */
 
@@ -100,5 +112,21 @@ typedef void(^InputTipsFinished)(NSError *error, NSArray *tips);
  *  @param cityName 城市名或城市code
  */
 -(void)inputTipsWithKeywords:(NSString *)keywords city:(NSString *)cityName finish:(InputTipsFinished)block;
+
+
+#pragma mark - 地理编码 
+
+/**
+ * 根据 名称 搜索地理位置
+ * @param name必选
+ * @param cityName可选（可为城市名、code,adcode）
+ */
+-(void)geoSearchByName:(NSString *)name city:(NSString *)cityName finish:(GeoFinished)block;
+
+/**
+ *  根据经纬度查地名
+ */
+-(void)reverseGeoSearchByCoor:(CLLocationCoordinate2D)coor finish:(RevserGeoFinished)block;
+
 
 @end

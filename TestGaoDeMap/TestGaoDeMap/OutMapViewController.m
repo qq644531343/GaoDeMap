@@ -6,13 +6,11 @@
 //  Copyright (c) 2015年 libo. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "OutMapViewController.h"
 #import "GaoMapHeaders.h"
-#import "OutSearchViewController.h"
 #import "OutBottomView.h"
-#import "OutNaviViewController.h"
 
-@interface ViewController ()<MAMapViewDelegate>
+@interface OutMapViewController ()<MAMapViewDelegate>
 
 @property (nonatomic ,strong) GaoMapView *mapview;
 
@@ -26,7 +24,7 @@
 
 @end
 
-@implementation ViewController
+@implementation OutMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,9 +35,19 @@
     
     [self addSearchView];
     
-    [self addOutShowView];
+    [self addOutDetailView];
     
     [self addOutNaviView];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 //添加地图
@@ -49,7 +57,7 @@
     [self.mapview.mapManager showUserLocationPoint];
     [self.mapview defaultSetting];
     
-    __weak ViewController *weakself = self;
+    __weak OutMapViewController *weakself = self;
     self.mapview.mapManager.clickedAnnotation = ^(id<MAAnnotation> annotation, MAAnnotationView *annotationView){
         if(annotation == nil){
             weakself.destAnnotation = nil;
@@ -87,19 +95,30 @@
 }
 
 //添加POI详情View
--(void)addOutShowView
+-(void)addOutDetailView
 {
     self.detailView = [OutBottomView addViewOn:self.view marginBottom:15 marginLeft:10];
     [self.detailView refreshWithData:nil type:OutBottomTypeDest];
     
-    __weak ViewController *weakself = self;
+    __weak OutMapViewController *weakself = self;
     self.detailView.btnClicked = ^(UIButton *btn){
-        NSLog(@"带我去");
-        weakself.searchBar.hidden = YES;
-       
-        weakself.naviVC.show = YES;
         
-        [weakself showOutDetailView:NO];
+        if (weakself.detailView.type == OutBottomTypeDest) {
+            NSLog(@"带我去");
+            weakself.searchBar.hidden = YES;
+            weakself.naviVC.show = YES;
+            [weakself.detailView refreshWithData:nil type:OutBottomTypeRoute];
+            
+        }else if(weakself.detailView.type == OutBottomTypeRoute) {
+            NSLog(@"路线详情");
+            
+            OutRouteViewController *route = [[OutRouteViewController alloc] init];
+            [weakself.navigationController pushViewController:route animated:YES];
+            
+        }else if(weakself.detailView.type == OutBottomTypePOI){
+            NSLog(@"POI详情");
+        }
+       
     };
     
     [self showOutDetailView:NO];
@@ -110,11 +129,12 @@
 {
     self.naviVC = [[OutNaviViewController alloc] init];
     self.naviVC.parentVC = self;
+    self.naviVC.mapview = self.mapview;
     [self addChildViewController:_naviVC];
     [self.view addSubview:_naviVC.view];
     
     _naviVC.show = NO;
-    __weak ViewController *weakself = self;
+    __weak OutMapViewController *weakself = self;
     _naviVC.backBtnClicked = ^(){
         weakself.searchBar.hidden = NO;
     };
@@ -145,22 +165,6 @@
     NSLog(@"进入品牌墙");
 }
 
-//导航去目标点
--(void)naviToDestWithType:(int)type
-{
-    [self.mapview naviMineToDest:self.destAnnotation type:type];
-}
-
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
 
 
 @end

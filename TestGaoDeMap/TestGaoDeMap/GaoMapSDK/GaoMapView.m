@@ -230,7 +230,7 @@
 #pragma mark - Test
 
 //导航至某点
--(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type
+-(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type finished:(void (^)(AMapRoute *))block
 {
     GaoBaseAnnotation *start = [[GaoBaseAnnotation alloc] init];
     start.title = self.userLocation.title;
@@ -239,11 +239,11 @@
     start.type = 1;
     dest.type = 2;
     
-    [self naviFrom:start dest:dest type:type];
+    [self naviFrom:start dest:dest type:type finished:block];
 }
 
 //导航辅助方法
--(void)naviFrom:(GaoBaseAnnotation *)src dest:(GaoBaseAnnotation *)dest type:(int)type
+-(void)naviFrom:(GaoBaseAnnotation *)src dest:(GaoBaseAnnotation *)dest type:(int)type finished:(void (^)(AMapRoute *))block
 {
     [self addMyAnnotationBase:[NSArray arrayWithObjects:src,dest, nil]];
     
@@ -253,12 +253,15 @@
     //自驾
     if (type == 1) {
         [self.searchManager searchNaviDriveWithStart:point1 dest:point2 strategy:0 finish:^(NSError *error, AMapRoute *route) {
-            
+            XLog(@"自驾路线：%ld条",route.paths.count);
+            if (block) {
+                block(route);
+            }
             if (route.paths.count > 0) {
                 MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeDrive];
                 [navi addToMapView:self];
             }else {
-                 XLog(@"没有自驾路线");
+                
             }
         }];
 
@@ -266,11 +269,15 @@
     //公交
         [self.searchManager searchNaviBusWithStart:point1 dest:point2 strategy:0 cityCode:@"beijing" finish:^(NSError *error, AMapRoute *route) {
             
+            XLog(@"公交路线：%ld条",route.transits.count);
+            if (block) {
+                block(route);
+            }
             if (route.transits.count > 0) {
                 MANaviRoute *navi = [MANaviRoute naviRouteForTransit:route.transits[0]];
                 [navi addToMapView:self];
             }else {
-                XLog(@"没有公交路线");
+                
             }
         }];
         
@@ -278,11 +285,15 @@
      //步行
         [self.searchManager searchNaviWalkWithStart:point1 dest:point2 finish:^(NSError *error, AMapRoute *route) {
             
+            XLog(@"步行路线：%ld条",route.paths.count);
+            if (block) {
+                block(route);
+            }
             if (route.paths.count > 0) {
                 MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeWalking];
                 [navi addToMapView:self];
             }else {
-                XLog(@"没有步行路线");
+               
             }
         }];
     }

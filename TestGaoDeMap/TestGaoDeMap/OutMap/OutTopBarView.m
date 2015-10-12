@@ -22,9 +22,14 @@
 
 +(OutTopBarView  *)getTopBarOnView:(UIView *)view
 {
-    OutTopBarView *barView = [[OutTopBarView alloc] initWithFrame:CGRectMake(0, 64, GAO_SIZE.width, 44)];
-    barView.backgroundColor = [UIColor blackColor];
+    OutTopBarView *barView = [[OutTopBarView alloc] initWithFrame:CGRectMake(0, 20, GAO_SIZE.width, 44)];
+    barView.backgroundColor = [UIColor whiteColor];
     [view addSubview:barView];
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, barView.frame.size.height - 0.5, barView.frame.size.width, 0.5)];
+    line.backgroundColor = [UIColor lightGrayColor];
+    [barView addSubview:line];
+    
     return barView;
 }
 

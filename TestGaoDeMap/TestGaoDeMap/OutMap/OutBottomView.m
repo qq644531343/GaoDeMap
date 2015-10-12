@@ -162,7 +162,7 @@
     btnGo.layer.cornerRadius = 2;
     btnGo.backgroundColor = GaoColorWithRGB(0x3C9BFA);
     [btnGo setTitle:@"带我去" forState:UIControlStateNormal];
-    [btnGo setImage:[UIImage imageNamed:@"gao_step_gray"] forState:UIControlStateNormal];
+    [btnGo setImage:[UIImage imageNamed:@"gao_navi_3"] forState:UIControlStateNormal];
     btnGo.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
     [self addSubview:btnGo];
     
@@ -174,7 +174,7 @@
 -(void)addViewForDest:(NSString *)name address:(NSString *)addr
 {
     UIImageView *imageCar = [[UIImageView alloc] initWithFrame:CGRectMake(LEFT_MARGIN, 20, 30, 30)];
-    imageCar.image = [UIImage imageNamed:@"gao_bus_blue"];
+    imageCar.image = [UIImage imageNamed:@"gao_navi_2H"];
     imageCar.contentMode = UIViewContentModeScaleAspectFit;
     imageCar.backgroundColor = [GaoColorWithRGB(0x3C9BFA) colorWithAlphaComponent:0.2];
     [self addSubview:imageCar];
@@ -196,7 +196,7 @@
     btnGo.layer.cornerRadius = 2;
     btnGo.backgroundColor = GaoColorWithRGB(0x3C9BFA);
     [btnGo setTitle:@"带我去" forState:UIControlStateNormal];
-    [btnGo setImage:[UIImage imageNamed:@"gao_step_gray"] forState:UIControlStateNormal];
+    [btnGo setImage:[UIImage imageNamed:@"gao_navi_3"] forState:UIControlStateNormal];
     btnGo.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
     [self addSubview:btnGo];
     

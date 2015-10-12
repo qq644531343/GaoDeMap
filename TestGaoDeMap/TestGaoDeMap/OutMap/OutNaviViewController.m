@@ -8,12 +8,12 @@
 
 #import "OutNaviViewController.h"
 #import "OutTopBarView.h"
-#import "ViewController.h"
+#import "OutMapViewController.h"
 
 @interface OutNaviViewController ()
-{
-    OutTopBarView *barView;
-}
+
+@property (nonatomic ,strong)  OutTopBarView *barView;
+
 @end
 
 @implementation OutNaviViewController
@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.frame = CGRectMake(0, 0, GAO_SIZE.width, 108);
+    self.view.frame = CGRectMake(0, 0, GAO_SIZE.width, 64);
     self.view.backgroundColor = [UIColor whiteColor] ;
     
     [self addTopView];
@@ -29,26 +29,23 @@
 
 -(void)addTopView
 {
+    
+    self.barView = [OutTopBarView getTopBarOnView:self.view];
+    [_barView defaultSetting];
+    
+    __weak OutNaviViewController *weakself = self;
+    _barView.naviTypeChanged = ^(int naviType){
+        [weakself naviToDestWithType:naviType];
+        
+    };
+    
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [backBtn setTitle:@"返回" forState:UIControlStateNormal];
     [backBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    backBtn.frame = CGRectMake(0, 20, 60, 44);
+    backBtn.frame = CGRectMake(0, 0, 60, 44);
     [backBtn addTarget:self action:@selector(backToParent:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:backBtn];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, GAO_SIZE.width, 44)];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"导航";
-    [self.view addSubview:titleLabel];
-    
-    barView = [OutTopBarView getTopBarOnView:self.view];
-    [barView defaultSetting];
-    
-    __weak OutNaviViewController *weakself = self;
-    barView.naviTypeChanged = ^(int naviType){
-        [weakself.parentVC naviToDestWithType:naviType];
-    };
-    
+    [_barView addSubview:backBtn];
+
 }
 
 -(void)backToParent:(UIButton *)btn
@@ -67,9 +64,23 @@
     
     //默认为步行导航
     if(show){
-        barView.currentNaviType = 3;
+        _barView.currentNaviType = 3;
     }
     
 }
+
+//导航去目标点
+-(void)naviToDestWithType:(int)type
+{
+    __weak OutNaviViewController *weakself = self;
+    [self.mapview naviMineToDest:self.parentVC.destAnnotation type:type finished:^(AMapRoute *route) {
+        if (weakself.barView.currentNaviType == 2) {
+            weakself.view.frame = CGRectMake(0, 0, GAO_SIZE.width, GAO_SIZE.height);
+        }else {
+            weakself.view.frame = CGRectMake(0, 0, GAO_SIZE.width, 64);
+        }
+    }];
+}
+
 
 @end

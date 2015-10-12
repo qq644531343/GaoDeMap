@@ -26,9 +26,10 @@
 		0929AC0B1BBBDE2D00686046 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABF31BBBDE2D00686046 /* MANaviAnnotationView.m */; };
 		092A5ACB1BC65B2200A57CCC /* GaoBaseAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
 		092A5ACF1BC667F800A57CCC /* OutSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		092BA55B1BCB5F6800FD2CBA /* OutRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0930907C1BABD58A00AA4E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907B1BABD58A00AA4E72 /* main.m */; };
 		0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907E1BABD58A00AA4E72 /* AppDelegate.m */; };
-		093090821BABD58A00AA4E72 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093090811BABD58A00AA4E72 /* ViewController.m */; };
+		093090821BABD58A00AA4E72 /* OutMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093090811BABD58A00AA4E72 /* OutMapViewController.m */; };
 		093090851BABD58A00AA4E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093090831BABD58A00AA4E72 /* Main.storyboard */; };
 		093090871BABD58A00AA4E72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093090861BABD58A00AA4E72 /* Images.xcassets */; };
 		0930908A1BABD58A00AA4E72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093090881BABD58A00AA4E72 /* LaunchScreen.xib */; };
@@ -93,13 +94,15 @@
 		092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoBaseAnnotationView.m; sourceTree = "<group>"; };
 		092A5ACD1BC667F800A57CCC /* OutSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutSearchViewController.h; sourceTree = "<group>"; };
 		092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutSearchViewController.m; sourceTree = "<group>"; };
+		092BA5591BCB5F6800FD2CBA /* OutRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutRouteViewController.h; sourceTree = "<group>"; };
+		092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutRouteViewController.m; sourceTree = "<group>"; };
 		093090761BABD58A00AA4E72 /* TestGaoDeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGaoDeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930907A1BABD58A00AA4E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0930907B1BABD58A00AA4E72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0930907D1BABD58A00AA4E72 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0930907E1BABD58A00AA4E72 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		093090801BABD58A00AA4E72 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		093090811BABD58A00AA4E72 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		093090801BABD58A00AA4E72 /* OutMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutMapViewController.h; sourceTree = "<group>"; };
+		093090811BABD58A00AA4E72 /* OutMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutMapViewController.m; sourceTree = "<group>"; };
 		093090841BABD58A00AA4E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		093090861BABD58A00AA4E72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		093090891BABD58A00AA4E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */,
 				09CC99A41BC7CFF8009472E2 /* OutNaviViewController.h */,
 				09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */,
+				092BA5591BCB5F6800FD2CBA /* OutRouteViewController.h */,
+				092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */,
 			);
 			path = OutMap;
 			sourceTree = "<group>";
@@ -261,8 +266,8 @@
 				093090A01BABDC2200AA4E72 /* GaoMapSDK */,
 				0930907D1BABD58A00AA4E72 /* AppDelegate.h */,
 				0930907E1BABD58A00AA4E72 /* AppDelegate.m */,
-				093090801BABD58A00AA4E72 /* ViewController.h */,
-				093090811BABD58A00AA4E72 /* ViewController.m */,
+				093090801BABD58A00AA4E72 /* OutMapViewController.h */,
+				093090811BABD58A00AA4E72 /* OutMapViewController.m */,
 				093090831BABD58A00AA4E72 /* Main.storyboard */,
 				093090861BABD58A00AA4E72 /* Images.xcassets */,
 				093090881BABD58A00AA4E72 /* LaunchScreen.xib */,
@@ -469,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092BA55B1BCB5F6800FD2CBA /* OutRouteViewController.m in Sources */,
 				0929AC001BBBDE2D00686046 /* MANaviAnnotation.m in Sources */,
 				09667AD41BAFA1F900C99397 /* GaoBaseAnnotation.m in Sources */,
 				0929AC071BBBDE2D00686046 /* CusAnnotationView.m in Sources */,
@@ -487,7 +493,7 @@
 				0929AC0B1BBBDE2D00686046 /* MANaviAnnotationView.m in Sources */,
 				0929ABF91BBBDE2D00686046 /* AnimatedAnnotation.m in Sources */,
 				0929AC021BBBDE2D00686046 /* MANaviRoute.m in Sources */,
-				093090821BABD58A00AA4E72 /* ViewController.m in Sources */,
+				093090821BABD58A00AA4E72 /* OutMapViewController.m in Sources */,
 				0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */,
 				0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */,
 				0906FEAA1BC770A90041F800 /* OutBottomView.m in Sources */,

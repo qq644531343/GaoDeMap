@@ -1,22 +1,19 @@
 //
-//  OutTopBarView.h
+//  OutRouteViewController.h
 //  TestGaoDeMap
 //
-//  Created by libo on 15/10/10.
+//  Created by libo on 15/10/12.
 //  Copyright © 2015年 libo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 /**
- *  路线导航顶部bar
+ *  路线详情
  */
 
-@interface OutTopBarView : UIView
+@interface OutRouteViewController : UIViewController
 
-+ (OutTopBarView *)getTopBarOnView:(UIView *)view;
-
--(void)defaultSetting;
 
 /**
  *  当前导航方式

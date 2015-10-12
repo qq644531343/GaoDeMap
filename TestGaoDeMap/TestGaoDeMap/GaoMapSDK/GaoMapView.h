@@ -11,6 +11,7 @@
 @class GaoMapManager;
 @class GaoMapSearchManager;
 @class AMapTip;
+@class AMapRoute;
 @class GaoBaseAnnotation;
 
 @interface GaoMapView : MAMapView
@@ -29,7 +30,7 @@
  *  @param dest 目标点
  *  @param type 1自驾 2公交 3步行
  */
--(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type;
+-(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type finished:(void (^)(AMapRoute *route))block;
 
 /**
  *  设置定位icon、缩放icon与地图底部的间距

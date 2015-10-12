@@ -79,6 +79,31 @@
     }
 }
 
+/**
+ *  Geo回调
+ */
+
+- (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
+{
+    GeoFinished block = [self popBlockForRequest:request];
+    if (block) {
+        block(nil,response.geocodes);
+        block = nil;
+    }
+}
+
+/**
+ *  ReverseGeo回调
+ */
+- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response
+{
+    RevserGeoFinished block = [self popBlockForRequest:request];
+    if (block) {
+        block(nil,response.regeocode);
+        block = nil;
+    }
+}
+
 #pragma mark - POI搜索
 
 /**
@@ -199,6 +224,34 @@
     request.city = cityName;
     
     [self.search AMapInputTipsSearch:request];
+    [self pushBlockForRequest:request block:block];
+}
+
+#pragma mark - 地理编解码
+//根据名称搜索地理位置
+-(void)geoSearchByName:(NSString *)name city:(NSString *)cityName finish:(GeoFinished)block
+{
+    AMapGeocodeSearchRequest *request = [[AMapGeocodeSearchRequest alloc] init];
+    request.address = name;
+    
+    if (cityName.length > 0) {
+        request.city = cityName;
+    }
+    
+    [self.search AMapGeocodeSearch:request];
+    [self pushBlockForRequest:request block:block];
+}
+
+/**
+ *  根据经纬度查地名
+ */
+-(void)reverseGeoSearchByCoor:(CLLocationCoordinate2D)coor finish:(RevserGeoFinished)block
+{
+    AMapReGeocodeSearchRequest *request = [[AMapReGeocodeSearchRequest alloc] init];
+    request.location = [AMapGeoPoint locationWithLatitude:coor.latitude longitude:coor.longitude];
+    request.requireExtension = YES;
+    
+    [self.search AMapReGoecodeSearch:request];
     [self pushBlockForRequest:request block:block];
 }
 

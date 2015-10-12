@@ -61,7 +61,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchTextFieldDidChangeValue:) name:UITextFieldTextDidChangeNotification object:self.searchTextFiled];
 
-
 }
 
 

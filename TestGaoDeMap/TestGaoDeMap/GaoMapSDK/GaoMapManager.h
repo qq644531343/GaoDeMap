@@ -13,6 +13,7 @@ typedef void(^SelectedAnnotation)(id<MAAnnotation> annotation,MAAnnotationView *
 
 @class GaoMapView;
 @class GaoBaseAnnotationView;
+@class AMapReGeocode;
 
 /**
  *  地图管理工具
@@ -41,5 +42,10 @@ typedef void(^SelectedAnnotation)(id<MAAnnotation> annotation,MAAnnotationView *
  *  聚焦用户所在地
  */
 -(void)showUserLocationPoint;
+
+/**
+ *  用户当前位置信息
+ */
+@property (nonatomic, strong) AMapReGeocode *userAddress;
 
 @end

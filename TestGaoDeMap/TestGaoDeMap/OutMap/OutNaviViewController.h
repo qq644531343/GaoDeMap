@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GaoMapHeaders.h"
 
-@class ViewController;
+@class OutMapViewController;
 
 /**
  *  导航规划
@@ -17,7 +17,9 @@
 
 @interface OutNaviViewController : UIViewController
 
-@property (nonatomic ,weak) ViewController *parentVC;
+@property (nonatomic ,weak) OutMapViewController *parentVC;
+
+@property (nonatomic ,weak) GaoMapView *mapview;
 
 @property (nonatomic, readwrite) BOOL show;
 
@@ -25,5 +27,7 @@
  *  返回事件回调
  */
 @property (nonatomic,copy) void(^backBtnClicked)();
+
+
 
 @end
