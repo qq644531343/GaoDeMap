@@ -14,22 +14,28 @@
 
 @property (nonatomic ,strong)  OutTopBarView *barView;
 
+@property (nonatomic ,strong) UIView *contentView;
+
 @end
 
 @implementation OutNaviViewController
 
+#pragma mark - View
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.frame = CGRectMake(0, 0, GAO_SIZE.width, 64);
     self.view.backgroundColor = [UIColor whiteColor] ;
     
     [self addTopView];
+    
+    [self addBusView];
+    
+    [self showContentView:NO];
 }
 
 -(void)addTopView
 {
-    
     self.barView = [OutTopBarView getTopBarOnView:self.view];
     [_barView defaultSetting];
     
@@ -48,6 +54,20 @@
 
 }
 
+-(void)addBusView
+{
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, GAO_SIZE.width, GAO_SIZE.height - 64)];
+    [self.view addSubview:self.contentView];
+    
+    UISegmentedControl *seg = [[UISegmentedControl alloc]initWithItems:[NSArray arrayWithObjects:@"最佳路线",@"步行少",@"换乘少",@"不坐地铁", nil]];
+    seg.frame = CGRectMake(10,10, GAO_SIZE.width - 20, 35);
+    seg.selectedSegmentIndex = 0;
+    [_contentView addSubview:seg];
+    [seg addTarget:self action:@selector(segChanged:) forControlEvents:UIControlEventValueChanged];
+}
+
+#pragma mark - Action
+
 -(void)backToParent:(UIButton *)btn
 {
     [self setShow:NO];
@@ -57,6 +77,7 @@
     }
 }
 
+//显示二级bar
 -(void)setShow:(BOOL)show
 {
     _show = show;
@@ -72,15 +93,54 @@
 //导航去目标点
 -(void)naviToDestWithType:(int)type
 {
+    NSInteger strategy = 0;
+    if (self.barView.currentNaviType == 2) {
+        [self showContentView:YES];
+    }else {
+        [self showContentView:NO];
+    }
     __weak OutNaviViewController *weakself = self;
-    [self.mapview naviMineToDest:self.parentVC.destAnnotation type:type finished:^(AMapRoute *route) {
-        if (weakself.barView.currentNaviType == 2) {
-            weakself.view.frame = CGRectMake(0, 0, GAO_SIZE.width, GAO_SIZE.height);
-        }else {
-            weakself.view.frame = CGRectMake(0, 0, GAO_SIZE.width, 64);
-        }
+    [self.mapview naviMineToDest:self.parentVC.destAnnotation type:type strategy:strategy finished:^(AMapRoute *route) {
+        [weakself.parentVC.detailView refreshWithData:route annotation:weakself.parentVC.destAnnotation type:2];
     }];
 }
 
+-(void)segChanged:(UISegmentedControl *)seg
+{
+    NSLog(@"%@",[seg titleForSegmentAtIndex:seg.selectedSegmentIndex]);
+    NSInteger strategy = 0;
+    switch (seg.selectedSegmentIndex) {
+        case 0:
+            strategy = 0;
+            break;
+        case 1:
+            strategy = 3;
+            break;
+        case 2:
+            strategy = 2;
+            break;
+        case 3:
+            strategy = 5;
+            break;
+        default:
+            break;
+    }
+    
+    [self.mapview naviMineToDest:self.parentVC.destAnnotation type:2 strategy:strategy finished:^(AMapRoute *route) {
+        
+    }];
+
+}
+
+//显示公交view
+-(void)showContentView:(BOOL)show
+{
+    self.contentView.hidden = !show;
+    if (show) {
+        self.view.frame = CGRectMake(0, 0, GAO_SIZE.width, GAO_SIZE.height);
+    }else {
+        self.view.frame = CGRectMake(0, 0, GAO_SIZE.width, 64);
+    }
+}
 
 @end

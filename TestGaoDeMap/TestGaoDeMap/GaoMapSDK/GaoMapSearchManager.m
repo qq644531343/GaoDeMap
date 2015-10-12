@@ -210,6 +210,7 @@
     request.strategy = strategy;
     request.origin = start;
     request.destination = dest;
+    request.requireExtension = YES;
     
     [self.search AMapDrivingRouteSearch:request];
     [self pushBlockForRequest:request block:block];

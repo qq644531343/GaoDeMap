@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GaoMapHeaders.h"
+
+@class OutMapViewController;
 
 typedef enum OutBottomType{
     OutBottomTypePOI,
@@ -31,7 +34,7 @@ typedef enum OutBottomType{
 /**
  *  填充数据
  */
--(void)refreshWithData:(id)data type:(OutBottomType)type;
+-(void)refreshWithData:(AMapRoute *)route annotation:(GaoBaseAnnotation *)anno type:(OutBottomType)type;
 
 /**
  *  控件实际高度
@@ -42,5 +45,10 @@ typedef enum OutBottomType{
  *  点击事件回调
  */
 @property (nonatomic,copy) void(^btnClicked)(UIButton *btn);
+
+/**
+ *  父controller
+ */
+@property (nonatomic, weak) OutMapViewController *parentVC;
 
 @end

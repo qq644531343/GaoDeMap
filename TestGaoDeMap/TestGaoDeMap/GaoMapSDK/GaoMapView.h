@@ -29,8 +29,9 @@
  *
  *  @param dest 目标点
  *  @param type 1自驾 2公交 3步行
+ *  @param strategy 导航策略，具体请参照GaoMapSearchManager
  */
--(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type finished:(void (^)(AMapRoute *route))block;
+-(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type strategy:(NSInteger)strategy finished:(void (^)(AMapRoute *route))block;
 
 /**
  *  设置定位icon、缩放icon与地图底部的间距

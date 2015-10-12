@@ -8,7 +8,6 @@
 
 #import "OutMapViewController.h"
 #import "GaoMapHeaders.h"
-#import "OutBottomView.h"
 
 @interface OutMapViewController ()<MAMapViewDelegate>
 
@@ -64,7 +63,7 @@
             [weakself showOutDetailView:NO];
         }else {
             weakself.destAnnotation = annotation;
-            [weakself.detailView refreshWithData:annotation type:OutBottomTypeDest];
+            [weakself.detailView refreshWithData:nil annotation:annotation type:OutBottomTypeDest];
             [weakself showOutDetailView:YES];
         }
     };
@@ -98,7 +97,8 @@
 -(void)addOutDetailView
 {
     self.detailView = [OutBottomView addViewOn:self.view marginBottom:15 marginLeft:10];
-    [self.detailView refreshWithData:nil type:OutBottomTypeDest];
+    self.detailView.parentVC = self;
+    [self.detailView refreshWithData:nil annotation:nil type:OutBottomTypeDest];
     
     __weak OutMapViewController *weakself = self;
     self.detailView.btnClicked = ^(UIButton *btn){
@@ -107,7 +107,6 @@
             NSLog(@"带我去");
             weakself.searchBar.hidden = YES;
             weakself.naviVC.show = YES;
-            [weakself.detailView refreshWithData:nil type:OutBottomTypeRoute];
             
         }else if(weakself.detailView.type == OutBottomTypeRoute) {
             NSLog(@"路线详情");

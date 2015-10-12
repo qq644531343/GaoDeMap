@@ -44,7 +44,7 @@
     self.mapType = MAMapTypeStandard;
     
     //实时交通
-    self.showTraffic = NO;
+    self.showTraffic = YES;
     
     //显示指南针
     self.showsCompass = NO;
@@ -230,7 +230,7 @@
 #pragma mark - Test
 
 //导航至某点
--(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type finished:(void (^)(AMapRoute *))block
+-(void)naviMineToDest:(GaoBaseAnnotation *)dest type:(int)type strategy:(NSInteger)strategy finished:(void (^)(AMapRoute *))block
 {
     GaoBaseAnnotation *start = [[GaoBaseAnnotation alloc] init];
     start.title = self.userLocation.title;
@@ -239,11 +239,11 @@
     start.type = 1;
     dest.type = 2;
     
-    [self naviFrom:start dest:dest type:type finished:block];
+    [self naviFrom:start dest:dest type:type strategy:strategy finished:block];
 }
 
-//导航辅助方法
--(void)naviFrom:(GaoBaseAnnotation *)src dest:(GaoBaseAnnotation *)dest type:(int)type finished:(void (^)(AMapRoute *))block
+//导航:从src到dest点
+-(void)naviFrom:(GaoBaseAnnotation *)src dest:(GaoBaseAnnotation *)dest type:(int)type strategy:(NSInteger)strategy finished:(void (^)(AMapRoute *))block
 {
     [self addMyAnnotationBase:[NSArray arrayWithObjects:src,dest, nil]];
     
@@ -252,7 +252,7 @@
 
     //自驾
     if (type == 1) {
-        [self.searchManager searchNaviDriveWithStart:point1 dest:point2 strategy:0 finish:^(NSError *error, AMapRoute *route) {
+        [self.searchManager searchNaviDriveWithStart:point1 dest:point2 strategy:strategy finish:^(NSError *error, AMapRoute *route) {
             XLog(@"自驾路线：%ld条",route.paths.count);
             if (block) {
                 block(route);
@@ -267,7 +267,7 @@
 
     }else if(type == 2){
     //公交
-        [self.searchManager searchNaviBusWithStart:point1 dest:point2 strategy:0 cityCode:@"beijing" finish:^(NSError *error, AMapRoute *route) {
+        [self.searchManager searchNaviBusWithStart:point1 dest:point2 strategy:strategy cityCode:self.mapManager.userAddress.addressComponent.citycode finish:^(NSError *error, AMapRoute *route) {
             
             XLog(@"公交路线：%ld条",route.transits.count);
             if (block) {

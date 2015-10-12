@@ -8,6 +8,7 @@
 
 #import "OutBottomView.h"
 #import "GaoMapHeaders.h"
+#import "OutMapViewController.h"
 
 #define LEFT_MARGIN 20
 
@@ -60,7 +61,7 @@
     
 }
 
--(void)refreshWithData:(GaoBaseAnnotation *)data type:(OutBottomType)type
+-(void)refreshWithData:(AMapRoute *)route annotation:(GaoBaseAnnotation *)anno type:(OutBottomType)type
 {
     _type = type;
     _myHeight = 0;
@@ -74,13 +75,19 @@
     }else if(type == OutBottomTypeDest) {
         
         _myHeight = 138;
-        CLLocationCoordinate2D coor = [data coordinate];
-        [self addViewForDest:[data title] address:[NSString stringWithFormat:@"(%f,%f)",coor.latitude, coor.longitude]];
+        CLLocationCoordinate2D coor = [anno coordinate];
+        [self addViewForDest:[anno title] address:@""];
+        __weak OutBottomView *weakself = self;
+        if (self.parentVC) {
+            [self.parentVC.mapview.searchManager reverseGeoSearchByCoor:coor finish:^(NSError *error, AMapReGeocode *res) {
+                [weakself addViewForDest:[anno title] address:res.formattedAddress];
+            }];
+        }
         
     }else if(type == OutBottomTypeRoute) {
         
         _myHeight = 60;
-        [self addViewForRoute];
+        [self addViewForRoute:route];
     }
     
     self.frame = CGRectMake(self.leftMargin, self.superview.frame.size.height - self.bottomMargin - _myHeight, self.superview.frame.size.width - 2*self.leftMargin, _myHeight);
@@ -203,10 +210,10 @@
     [btnGo addTarget:self action:@selector(goBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)addViewForRoute
+-(void)addViewForRoute:(AMapRoute *)route
 {
     UILabel *labelDistance = [[UILabel alloc] initWithFrame:CGRectMake(LEFT_MARGIN, 0, self.frame.size.width - 2*LEFT_MARGIN - 50, _myHeight)];
-    labelDistance.text = @"约1分钟（148米）";
+    labelDistance.text = @"约0分钟 (0米)";
     labelDistance.textAlignment = NSTextAlignmentLeft;
     [self addSubview:labelDistance];
     
@@ -218,6 +225,12 @@
     [self addSubview:btnGo];
     
     [btnGo addTarget:self action:@selector(goBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if (route.paths.count == 0) {
+        return;
+    }
+    AMapPath *path = route.paths[0];
+    labelDistance.text = [NSString stringWithFormat:@"约%ld分钟（%ld米）",path.duration/60, path.distance];
 }
 
 -(void)goBtnClicked:(UIButton *)btn

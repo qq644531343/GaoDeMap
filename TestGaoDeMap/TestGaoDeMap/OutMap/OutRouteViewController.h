@@ -21,9 +21,5 @@
  */
 @property (nonatomic, readwrite) int currentNaviType;
 
-/**
- *  点击事件回调
- */
-@property (nonatomic,copy) void(^naviTypeChanged)(int currentNaviType);
 
 @end

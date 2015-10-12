@@ -21,7 +21,18 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"导航详情";
    
-    
+    [self addTipsView];
+    [self addTableView];
+}
+
+-(void)addTipsView
+{
+
+}
+
+-(void)addTableView
+{
+
 }
 
 

@@ -29,7 +29,6 @@
 		092BA55B1BCB5F6800FD2CBA /* OutRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0930907C1BABD58A00AA4E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907B1BABD58A00AA4E72 /* main.m */; };
 		0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907E1BABD58A00AA4E72 /* AppDelegate.m */; };
-		093090821BABD58A00AA4E72 /* OutMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093090811BABD58A00AA4E72 /* OutMapViewController.m */; };
 		093090851BABD58A00AA4E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093090831BABD58A00AA4E72 /* Main.storyboard */; };
 		093090871BABD58A00AA4E72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093090861BABD58A00AA4E72 /* Images.xcassets */; };
 		0930908A1BABD58A00AA4E72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093090881BABD58A00AA4E72 /* LaunchScreen.xib */; };
@@ -43,6 +42,7 @@
 		09667AD41BAFA1F900C99397 /* GaoBaseAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */; };
 		09667AD61BAFB0B700C99397 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09667AD51BAFB0B700C99397 /* 1.jpg */; };
 		09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
+		09DC82D41BCBD700007FCBE2 /* OutMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC82D31BCBD700007FCBE2 /* OutMapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BD3954DB09BA33770B734C15 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB895F2322D4EA44F816DB86 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -101,8 +101,6 @@
 		0930907B1BABD58A00AA4E72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0930907D1BABD58A00AA4E72 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0930907E1BABD58A00AA4E72 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		093090801BABD58A00AA4E72 /* OutMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutMapViewController.h; sourceTree = "<group>"; };
-		093090811BABD58A00AA4E72 /* OutMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutMapViewController.m; sourceTree = "<group>"; };
 		093090841BABD58A00AA4E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		093090861BABD58A00AA4E72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		093090891BABD58A00AA4E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -128,6 +126,8 @@
 		09667AD51BAFB0B700C99397 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		09CC99A41BC7CFF8009472E2 /* OutNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutNaviViewController.h; sourceTree = "<group>"; };
 		09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutNaviViewController.m; sourceTree = "<group>"; };
+		09DC82D21BCBD700007FCBE2 /* OutMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutMapViewController.h; sourceTree = "<group>"; };
+		09DC82D31BCBD700007FCBE2 /* OutMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutMapViewController.m; sourceTree = "<group>"; };
 		1ACD651A3E696762EB3F8E97 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6883A3CAA5F1514EF2B8CB55 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BB895F2322D4EA44F816DB86 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				092A5AD01BC66A6200A57CCC /* View */,
+				09DC82D21BCBD700007FCBE2 /* OutMapViewController.h */,
+				09DC82D31BCBD700007FCBE2 /* OutMapViewController.m */,
 				092A5ACD1BC667F800A57CCC /* OutSearchViewController.h */,
 				092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */,
 				09CC99A41BC7CFF8009472E2 /* OutNaviViewController.h */,
@@ -266,8 +268,6 @@
 				093090A01BABDC2200AA4E72 /* GaoMapSDK */,
 				0930907D1BABD58A00AA4E72 /* AppDelegate.h */,
 				0930907E1BABD58A00AA4E72 /* AppDelegate.m */,
-				093090801BABD58A00AA4E72 /* OutMapViewController.h */,
-				093090811BABD58A00AA4E72 /* OutMapViewController.m */,
 				093090831BABD58A00AA4E72 /* Main.storyboard */,
 				093090861BABD58A00AA4E72 /* Images.xcassets */,
 				093090881BABD58A00AA4E72 /* LaunchScreen.xib */,
@@ -493,10 +493,10 @@
 				0929AC0B1BBBDE2D00686046 /* MANaviAnnotationView.m in Sources */,
 				0929ABF91BBBDE2D00686046 /* AnimatedAnnotation.m in Sources */,
 				0929AC021BBBDE2D00686046 /* MANaviRoute.m in Sources */,
-				093090821BABD58A00AA4E72 /* OutMapViewController.m in Sources */,
 				0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */,
 				0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */,
 				0906FEAA1BC770A90041F800 /* OutBottomView.m in Sources */,
+				09DC82D41BCBD700007FCBE2 /* OutMapViewController.m in Sources */,
 				0930907C1BABD58A00AA4E72 /* main.m in Sources */,
 				0929AC061BBBDE2D00686046 /* AnimatedAnnotationView.m in Sources */,
 				0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */,

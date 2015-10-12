@@ -185,7 +185,7 @@
     if (updatingLocation) {
         __weak GaoMapManager *weakself = self;
         [self.map.searchManager reverseGeoSearchByCoor:userLocation.coordinate finish:^(NSError *error, AMapReGeocode *res) {
-            NSLog(@"%@",res.formattedAddress);
+//            NSLog(@"%@",res.formattedAddress);
             weakself.userAddress = res;
         }];
     }
