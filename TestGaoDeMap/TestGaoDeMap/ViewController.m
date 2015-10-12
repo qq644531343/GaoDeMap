@@ -98,6 +98,8 @@
         weakself.searchBar.hidden = YES;
        
         weakself.naviVC.show = YES;
+        
+        [weakself showOutDetailView:NO];
     };
     
     [self showOutDetailView:NO];

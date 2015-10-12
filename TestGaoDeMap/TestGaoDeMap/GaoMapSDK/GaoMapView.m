@@ -83,14 +83,14 @@
     [self setShadowForView:relocateBtn];
     [relocateBtn setImage:[UIImage imageNamed:@"gao_relocate-gray"] forState:UIControlStateNormal];
     [relocateBtn addTarget:self action:@selector(relocationClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:relocateBtn];
+    [self.superview addSubview:relocateBtn];
 }
 
 -(void)addScaleView
 {
     viewZoomBase = [[UIView alloc] init];
     viewZoomBase.backgroundColor = [UIColor clearColor];
-    [self addSubview:viewZoomBase];
+    [self.superview addSubview:viewZoomBase];
     
     UIButton *btnZoomout = [UIButton buttonWithType:UIButtonTypeCustom];
     btnZoomout.frame = CGRectMake(0, 0, 40, 40);
@@ -141,6 +141,7 @@
     if (self.zoomLevel+1 > self.maxZoomLevel) {
         return;
     }
+    
     [self setZoomLevel:self.zoomLevel + 1 animated:YES];
 }
 
