@@ -12,9 +12,9 @@
 
 @interface OutNaviViewController ()
 
-@property (nonatomic ,strong)  OutTopBarView *barView;
-
 @property (nonatomic ,strong) UIView *contentView;
+
+@property (nonatomic, strong) AMapRoute *currentRoute;
 
 @end
 
@@ -102,6 +102,7 @@
     __weak OutNaviViewController *weakself = self;
     [self.mapview naviMineToDest:self.parentVC.destAnnotation type:type strategy:strategy finished:^(AMapRoute *route) {
         [weakself.parentVC.detailView refreshWithData:route annotation:weakself.parentVC.destAnnotation type:2];
+        weakself.currentRoute = route;
     }];
 }
 
@@ -126,8 +127,9 @@
             break;
     }
     
+    __weak OutNaviViewController *weakself = self;
     [self.mapview naviMineToDest:self.parentVC.destAnnotation type:2 strategy:strategy finished:^(AMapRoute *route) {
-        
+        weakself.currentRoute = route;
     }];
 
 }

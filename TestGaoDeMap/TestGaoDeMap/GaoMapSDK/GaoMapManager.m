@@ -77,6 +77,7 @@
         }
         annotationView.image = [UIImage imageNamed:@"gao_mapArrow"];
         self.userLocationAnnotationView = annotationView;
+        annotationView.canShowCallout = YES;
         return annotationView;
         
     }else {
@@ -100,10 +101,13 @@
         return;
     }
     
-    self.selectAnnotationView = (GaoBaseAnnotationView *)view;
-    XLog(@"%@", [view.annotation class]);
-    if (self.clickedAnnotation) {
-        self.clickedAnnotation(view.annotation, view);
+     XLog(@"%@", [view.annotation class]);
+    if([view isKindOfClass:[GaoBaseAnnotationView class]]){
+        self.selectAnnotationView = (GaoBaseAnnotationView *)view;
+        if (self.clickedAnnotation) {
+            self.clickedAnnotation(view.annotation, view);
+        }
+
     }
 }
 

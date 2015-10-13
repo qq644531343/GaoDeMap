@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0906FEAA1BC770A90041F800 /* OutBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0906FEA91BC770A90041F800 /* OutBottomView.m */; settings = {ASSET_TAGS = (); }; };
+		0928F5031BCCEAE50089CC96 /* path.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0928F5021BCCEAE50089CC96 /* path.txt */; settings = {ASSET_TAGS = (); }; };
+		0928F50A1BCCED1B0089CC96 /* OutBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5071BCCED1B0089CC96 /* OutBottomView.m */; settings = {ASSET_TAGS = (); }; };
+		0928F50B1BCCED1B0089CC96 /* OutTopBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5091BCCED1B0089CC96 /* OutTopBarView.m */; settings = {ASSET_TAGS = (); }; };
+		0928F50E1BCCED690089CC96 /* OutNaviStartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F50D1BCCED690089CC96 /* OutNaviStartCell.m */; settings = {ASSET_TAGS = (); }; };
+		0928F5111BCCEEE10089CC96 /* OutNaviBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5101BCCEEE10089CC96 /* OutNaviBaseCell.m */; settings = {ASSET_TAGS = (); }; };
 		0929AB911BBB829000686046 /* GaoMapSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929AB901BBB829000686046 /* GaoMapSearchManager.m */; };
 		0929AB931BBB84A700686046 /* gaopoi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0929AB921BBB84A700686046 /* gaopoi.plist */; };
 		0929ABF91BBBDE2D00686046 /* AnimatedAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABCD1BBBDE2D00686046 /* AnimatedAnnotation.m */; };
@@ -38,7 +42,6 @@
 		0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BB1BBA8BC100FF85AD /* GaoMapView.m */; };
 		0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */; };
 		0937D9C21BBA956800FF85AD /* GaoMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9C11BBA956800FF85AD /* GaoMapManager.m */; };
-		094B9D811BC8C69400AB64BC /* OutTopBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 094B9D801BC8C69400AB64BC /* OutTopBarView.m */; settings = {ASSET_TAGS = (); }; };
 		09667AD41BAFA1F900C99397 /* GaoBaseAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */; };
 		09667AD61BAFB0B700C99397 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09667AD51BAFB0B700C99397 /* 1.jpg */; };
 		09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -57,9 +60,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0906FEA81BC770A90041F800 /* OutBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutBottomView.h; sourceTree = "<group>"; };
-		0906FEA91BC770A90041F800 /* OutBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutBottomView.m; sourceTree = "<group>"; };
 		0925CA621BC3C05900B2C46E /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		0928F5021BCCEAE50089CC96 /* path.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = path.txt; sourceTree = "<group>"; };
+		0928F5061BCCED1B0089CC96 /* OutBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutBottomView.h; sourceTree = "<group>"; };
+		0928F5071BCCED1B0089CC96 /* OutBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutBottomView.m; sourceTree = "<group>"; };
+		0928F5081BCCED1B0089CC96 /* OutTopBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutTopBarView.h; sourceTree = "<group>"; };
+		0928F5091BCCED1B0089CC96 /* OutTopBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutTopBarView.m; sourceTree = "<group>"; };
+		0928F50C1BCCED690089CC96 /* OutNaviStartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutNaviStartCell.h; sourceTree = "<group>"; };
+		0928F50D1BCCED690089CC96 /* OutNaviStartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutNaviStartCell.m; sourceTree = "<group>"; };
+		0928F50F1BCCEEE10089CC96 /* OutNaviBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutNaviBaseCell.h; sourceTree = "<group>"; };
+		0928F5101BCCEEE10089CC96 /* OutNaviBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutNaviBaseCell.m; sourceTree = "<group>"; };
 		0929AB8F1BBB829000686046 /* GaoMapSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapSearchManager.h; sourceTree = "<group>"; };
 		0929AB901BBB829000686046 /* GaoMapSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapSearchManager.m; sourceTree = "<group>"; };
 		0929AB921BBB84A700686046 /* gaopoi.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gaopoi.plist; sourceTree = "<group>"; };
@@ -118,8 +128,6 @@
 		0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapTool.m; sourceTree = "<group>"; };
 		0937D9C01BBA956800FF85AD /* GaoMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapManager.h; sourceTree = "<group>"; };
 		0937D9C11BBA956800FF85AD /* GaoMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapManager.m; sourceTree = "<group>"; };
-		094B9D7F1BC8C69400AB64BC /* OutTopBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutTopBarView.h; sourceTree = "<group>"; };
-		094B9D801BC8C69400AB64BC /* OutTopBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutTopBarView.m; sourceTree = "<group>"; };
 		094B9D821BC8EE3200AB64BC /* hangzhou.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = hangzhou.gpx; sourceTree = "<group>"; };
 		09667AD21BAFA1F900C99397 /* GaoBaseAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GaoBaseAnnotation.h; path = ../GaoBaseAnnotation.h; sourceTree = "<group>"; };
 		09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GaoBaseAnnotation.m; path = ../GaoBaseAnnotation.m; sourceTree = "<group>"; };
@@ -159,6 +167,28 @@
 				6883A3CAA5F1514EF2B8CB55 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		0928F5041BCCED1B0089CC96 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0928F50C1BCCED690089CC96 /* OutNaviStartCell.h */,
+				0928F50D1BCCED690089CC96 /* OutNaviStartCell.m */,
+				0928F50F1BCCEEE10089CC96 /* OutNaviBaseCell.h */,
+				0928F5101BCCEEE10089CC96 /* OutNaviBaseCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0928F5051BCCED1B0089CC96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0928F5061BCCED1B0089CC96 /* OutBottomView.h */,
+				0928F5071BCCED1B0089CC96 /* OutBottomView.m */,
+				0928F5081BCCED1B0089CC96 /* OutTopBarView.h */,
+				0928F5091BCCED1B0089CC96 /* OutTopBarView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0929ABC91BBBDE2D00686046 /* Models */ = {
@@ -217,7 +247,8 @@
 		092A5ACC1BC6608900A57CCC /* OutMap */ = {
 			isa = PBXGroup;
 			children = (
-				092A5AD01BC66A6200A57CCC /* View */,
+				0928F5041BCCED1B0089CC96 /* Cell */,
+				0928F5051BCCED1B0089CC96 /* View */,
 				09DC82D21BCBD700007FCBE2 /* OutMapViewController.h */,
 				09DC82D31BCBD700007FCBE2 /* OutMapViewController.m */,
 				092A5ACD1BC667F800A57CCC /* OutSearchViewController.h */,
@@ -226,19 +257,9 @@
 				09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */,
 				092BA5591BCB5F6800FD2CBA /* OutRouteViewController.h */,
 				092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */,
+				0928F5021BCCEAE50089CC96 /* path.txt */,
 			);
 			path = OutMap;
-			sourceTree = "<group>";
-		};
-		092A5AD01BC66A6200A57CCC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0906FEA81BC770A90041F800 /* OutBottomView.h */,
-				0906FEA91BC770A90041F800 /* OutBottomView.m */,
-				094B9D7F1BC8C69400AB64BC /* OutTopBarView.h */,
-				094B9D801BC8C69400AB64BC /* OutTopBarView.m */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		0930906D1BABD58A00AA4E72 = {
@@ -424,6 +445,7 @@
 				0929AB931BBB84A700686046 /* gaopoi.plist in Resources */,
 				0937D9B91BBA769700FF85AD /* ReadMe.txt in Resources */,
 				093090871BABD58A00AA4E72 /* Images.xcassets in Resources */,
+				0928F5031BCCEAE50089CC96 /* path.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +504,7 @@
 				09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */,
 				0929AC011BBBDE2D00686046 /* GaoNaviPolyline.m in Sources */,
 				0929ABFE1BBBDE2D00686046 /* LineDashPolyline.m in Sources */,
+				0928F5111BCCEEE10089CC96 /* OutNaviBaseCell.m in Sources */,
 				092A5ACF1BC667F800A57CCC /* OutSearchViewController.m in Sources */,
 				0929AC081BBBDE2D00686046 /* CustomCalloutView.m in Sources */,
 				093090A31BABDC4B00AA4E72 /* GaoMapConfig.m in Sources */,
@@ -490,18 +513,19 @@
 				092A5ACB1BC65B2200A57CCC /* GaoBaseAnnotationView.m in Sources */,
 				0929ABFB1BBBDE2D00686046 /* CustomOverlay.m in Sources */,
 				0937D9C21BBA956800FF85AD /* GaoMapManager.m in Sources */,
+				0928F50B1BCCED1B0089CC96 /* OutTopBarView.m in Sources */,
+				0928F50E1BCCED690089CC96 /* OutNaviStartCell.m in Sources */,
 				0929AC0B1BBBDE2D00686046 /* MANaviAnnotationView.m in Sources */,
 				0929ABF91BBBDE2D00686046 /* AnimatedAnnotation.m in Sources */,
 				0929AC021BBBDE2D00686046 /* MANaviRoute.m in Sources */,
 				0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */,
 				0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */,
-				0906FEAA1BC770A90041F800 /* OutBottomView.m in Sources */,
 				09DC82D41BCBD700007FCBE2 /* OutMapViewController.m in Sources */,
 				0930907C1BABD58A00AA4E72 /* main.m in Sources */,
 				0929AC061BBBDE2D00686046 /* AnimatedAnnotationView.m in Sources */,
 				0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */,
-				094B9D811BC8C69400AB64BC /* OutTopBarView.m in Sources */,
 				0929AB911BBB829000686046 /* GaoMapSearchManager.m in Sources */,
+				0928F50A1BCCED1B0089CC96 /* OutBottomView.m in Sources */,
 				0929ABFC1BBBDE2D00686046 /* FaceOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

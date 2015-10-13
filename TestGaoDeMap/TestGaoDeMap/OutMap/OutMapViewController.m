@@ -112,6 +112,8 @@
             NSLog(@"路线详情");
             
             OutRouteViewController *route = [[OutRouteViewController alloc] init];
+            route.route = weakself.naviVC.currentRoute;
+            route.currentNaviType = weakself.naviVC.barView.currentNaviType;
             [weakself.navigationController pushViewController:route animated:YES];
             
         }else if(weakself.detailView.type == OutBottomTypePOI){
@@ -136,6 +138,7 @@
     __weak OutMapViewController *weakself = self;
     _naviVC.backBtnClicked = ^(){
         weakself.searchBar.hidden = NO;
+        [weakself showOutDetailView:NO];
     };
 }
 

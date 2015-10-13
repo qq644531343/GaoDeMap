@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GaoMapHeaders.h"
 
 /**
  *  路线详情
@@ -21,5 +22,6 @@
  */
 @property (nonatomic, readwrite) int currentNaviType;
 
+@property (nonatomic,strong) AMapRoute *route;
 
 @end

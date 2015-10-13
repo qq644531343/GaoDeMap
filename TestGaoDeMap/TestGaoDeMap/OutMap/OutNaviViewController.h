@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GaoMapHeaders.h"
+#import "OutTopBarView.h"
 
 @class OutMapViewController;
 
@@ -21,13 +22,15 @@
 
 @property (nonatomic ,weak) GaoMapView *mapview;
 
-@property (nonatomic, readwrite) BOOL show;
-
 /**
  *  返回事件回调
  */
 @property (nonatomic,copy) void(^backBtnClicked)();
 
+@property (nonatomic, strong, readonly) AMapRoute *currentRoute;
 
+@property (nonatomic ,strong)  OutTopBarView *barView;
+
+@property (nonatomic, readwrite) BOOL show;
 
 @end
