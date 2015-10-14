@@ -9,10 +9,14 @@
 #import "OutNaviViewController.h"
 #import "OutTopBarView.h"
 #import "OutMapViewController.h"
+#import "OutBusInfoCell.h"
+#import "OutBusRouteViewController.h"
 
-@interface OutNaviViewController ()
+@interface OutNaviViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic ,strong) UIView *contentView;
+
+@property (nonatomic, strong) UITableView *tableview;
 
 @property (nonatomic, strong) AMapRoute *currentRoute;
 
@@ -64,6 +68,21 @@
     seg.selectedSegmentIndex = 0;
     [_contentView addSubview:seg];
     [seg addTarget:self action:@selector(segChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    float topmargin = seg.frame.origin.y + seg.frame.size.height + 20;
+    
+    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, topmargin-10, GAO_SIZE.width, 0.5)];
+    bottomLine.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
+    [self.contentView addSubview:bottomLine];
+    
+    self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, topmargin, GAO_SIZE.width, GAO_SIZE.height-64 - topmargin)];
+    _tableview.delegate = self;
+    _tableview.dataSource = self;
+    _tableview.tableFooterView = [UIView new];
+    _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.contentView addSubview:_tableview];
+    
+    [_tableview registerClass:[OutBusInfoCell class] forCellReuseIdentifier:@"cell"];
 }
 
 #pragma mark - Action
@@ -103,6 +122,10 @@
     [self.mapview naviMineToDest:self.parentVC.destAnnotation type:type strategy:strategy finished:^(AMapRoute *route) {
         [weakself.parentVC.detailView refreshWithData:route annotation:weakself.parentVC.destAnnotation type:2];
         weakself.currentRoute = route;
+        
+        if (weakself.barView.currentNaviType == 2) {
+            [weakself.tableview reloadData];
+        }
     }];
 }
 
@@ -130,6 +153,7 @@
     __weak OutNaviViewController *weakself = self;
     [self.mapview naviMineToDest:self.parentVC.destAnnotation type:2 strategy:strategy finished:^(AMapRoute *route) {
         weakself.currentRoute = route;
+        [weakself.tableview reloadData];
     }];
 
 }
@@ -144,5 +168,48 @@
         self.view.frame = CGRectMake(0, 0, GAO_SIZE.width, 64);
     }
 }
+
+#pragma mark - UITableView
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.currentRoute.transits.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    OutBusInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    AMapTransit *tran = self.currentRoute.transits[indexPath.row];
+    NSString *busline = [GaoMapTool generateBusline:tran];
+    
+    [cell setBuslines:busline info:[NSString stringWithFormat:@"%@ 步行%@",
+                                    [GaoMapTool secondsToFormatString:tran.duration],
+                                    [GaoMapTool meterToFormatString:tran.walkingDistance]
+                                    ]];
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AMapTransit *tran = self.currentRoute.transits[indexPath.row];
+    NSString *busline = [GaoMapTool generateBusline:tran];
+    
+    float height = [OutBusInfoCell heightForBuslines:busline];
+    return height;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AMapTransit *transit = self.currentRoute.transits[indexPath.row];
+    
+    OutBusRouteViewController *vc = [[OutBusRouteViewController alloc] init];
+    vc.transit = transit;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - Other
+
+
 
 @end

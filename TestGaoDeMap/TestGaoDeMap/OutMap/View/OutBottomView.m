@@ -230,7 +230,7 @@
         return;
     }
     AMapPath *path = route.paths[0];
-    labelDistance.text = [NSString stringWithFormat:@"约%ld分钟（%ld米）",path.duration/60, path.distance];
+    labelDistance.text = [NSString stringWithFormat:@"约%@（%@）",[GaoMapTool secondsToFormatString:path.duration], [GaoMapTool secondsToFormatString:path.distance]];
 }
 
 -(void)goBtnClicked:(UIButton *)btn

@@ -74,6 +74,7 @@
     [self addRelocation];
     [self addScaleView];
     [self setOutBtnBottomMargin:30 animation:NO];
+   
 }
 
 -(void)addRelocation
@@ -136,6 +137,7 @@
     [self.mapManager showUserLocationPoint];
 }
 
+//放大
 -(void)mapZoomOut:(UIButton *)btn
 {
     if (self.zoomLevel+1 > self.maxZoomLevel) {
@@ -145,6 +147,7 @@
     [self setZoomLevel:self.zoomLevel + 1 animated:YES];
 }
 
+//缩小
 -(void)mapZoomIn:(UIButton *)btn
 {
     if (self.zoomLevel -1 < self.minZoomLevel) {

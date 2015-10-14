@@ -8,7 +8,7 @@
 
 #import "OutRouteViewController.h"
 #import "GaoMapHeaders.h"
-#import "OutNaviBaseCell.h"
+#import "OutNaviDetailBaseCell.h"
 #import "OutNaviStartCell.h"
 
 @interface OutRouteViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -56,7 +56,7 @@
     
     stepPath = self.route.paths[0];
     
-    NSString *simpleInfo = [NSString stringWithFormat:@"约%ld分钟（%ld米）",stepPath.duration/60, stepPath.distance];
+    NSString *simpleInfo = [NSString stringWithFormat:@"约%ld分钟（%ld米）",stepPath.duration/60, (long)stepPath.distance];
     
     UILabel *labelTop = [[UILabel alloc] initWithFrame:CGRectMake(26, 64, GAO_SIZE.width - 40, 60)];
     labelTop.text = simpleInfo;
@@ -77,7 +77,7 @@
     
     [self.view addSubview:self.tableview];
     
-    [self.tableview registerClass:[OutNaviBaseCell class] forCellReuseIdentifier:@"basecell"];
+    [self.tableview registerClass:[OutNaviDetailBaseCell class] forCellReuseIdentifier:@"basecell"];
     [self.tableview registerClass:[OutNaviStartCell class] forCellReuseIdentifier:@"celltop"];
     [self.tableview registerClass:[OutNaviStartCell class] forCellReuseIdentifier:@"cellbottom"];
 }
@@ -91,7 +91,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OutNaviBaseCell *cell = nil;
+    OutNaviDetailBaseCell *cell = nil;
     
     if (indexPath.row == 0) {
         OutNaviStartCell *startCell = [tableView dequeueReusableCellWithIdentifier:@"celltop"];
@@ -146,12 +146,17 @@
     for (AMapTransit *tran in self.route.transits) {
         [str appendFormat:@"transite -- cost:%f duration:%ld nightflag:%d walkingDistance:%ld segments:%ld\n",tran.cost,tran.duration,tran.nightflag,tran.walkingDistance,tran.segments.count];
         for (AMapSegment *seg in tran.segments) {
-            [str appendFormat:@"walking:%@ buslines:%@ enterName:%@ exitName:%@, enterPoint:%@ exitPoint:%@",seg.walking,seg.buslines,seg.enterName,seg.exitName,seg.enterLocation,seg.exitLocation];
+            [str appendFormat:@"walking:%@ buslines:%@ enterName:%@ exitName:%@, enterPoint:%@ exitPoint:%@\n",seg.walking,seg.buslines,seg.enterName,seg.exitName,seg.enterLocation,seg.exitLocation];
         }
     }
     
     label.text = str;
     label.contentMode = UIViewContentModeTopLeft;
+}
+
+-(void)dealloc
+{
+    XLog(@"");
 }
 
 @end

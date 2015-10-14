@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OutNaviBaseCell.h"
+#import "OutNaviDetailBaseCell.h"
 
 /**
  *  起点 、终点 cell
  */
 
-@interface OutNaviStartCell : OutNaviBaseCell
+@interface OutNaviStartCell : OutNaviDetailBaseCell
 
 //0 起点  1终点
 @property (nonatomic, readwrite) int type;

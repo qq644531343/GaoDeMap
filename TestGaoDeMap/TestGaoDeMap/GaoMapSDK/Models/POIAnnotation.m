@@ -47,7 +47,7 @@
     _poi = poi;
     self.title = self.poi.name;
     self.subtitle = self.poi.address;
-    _coordinate =  CLLocationCoordinate2DMake(self.poi.location.latitude, self.poi.location.longitude);
+    self.coordinate =  CLLocationCoordinate2DMake(self.poi.location.latitude, self.poi.location.longitude);
 }
 
 @end

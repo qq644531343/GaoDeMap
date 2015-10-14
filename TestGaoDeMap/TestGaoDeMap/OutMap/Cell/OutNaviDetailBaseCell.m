@@ -6,10 +6,10 @@
 //  Copyright © 2015年 libo. All rights reserved.
 //
 
-#import "OutNaviBaseCell.h"
+#import "OutNaviDetailBaseCell.h"
 #import "GaoMapHeaders.h"
 
-@implementation OutNaviBaseCell
+@implementation OutNaviDetailBaseCell
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

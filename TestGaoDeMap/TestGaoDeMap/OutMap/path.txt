@@ -51,3 +51,49 @@ step --  instruction:沿府学巷向西步行50米到达目的地, orientation:�
 
 
 transite:
+
+
+
+
+
+taxi 27.145000
+transits:4
+paths:0
+
+paths:
+
+
+transite:
+transite -- cost:4.000000 duration:3637 nightflag:0 walkingDistance:1146 segments:3
+walking:<AMapWalking: 0x7fa2ef83a580> buslines:(
+"<AMapBusLine: 0x7fa2efd25ef0>"
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+walking:<AMapWalking: 0x7fa2efd4a680> buslines:(
+"<AMapBusLine: 0x7fa2efdae930>"
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+walking:<AMapWalking: 0x7fa2efdaf1c0> buslines:(
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+transite -- cost:4.000000 duration:4463 nightflag:0 walkingDistance:1454 segments:3
+walking:<AMapWalking: 0x7fa2efd31fa0> buslines:(
+"<AMapBusLine: 0x7fa2efdaf970>"
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+walking:(null) buslines:(
+"<AMapBusLine: 0x7fa2efdaf890>"
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+walking:<AMapWalking: 0x7fa2efdaf3f0> buslines:(
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+transite -- cost:6.000000 duration:4195 nightflag:0 walkingDistance:1312 segments:3
+walking:<AMapWalking: 0x7fa2efdb07a0> buslines:(
+"<AMapBusLine: 0x7fa2efdaed10>"
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+walking:<AMapWalking: 0x7fa2efdaf860> buslines:(
+"<AMapBusLine: 0x7fa2efdae450>"
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+walking:<AMapWalking: 0x7fa2efda89d0> buslines:(
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+transite -- cost:2.000000 duration:5386 nightflag:0 walkingDistance:3216 segments:2
+walking:<AMapWalking: 0x7fa2efdaddb0> buslines:(
+"<AMapBusLine: 0x7fa2efd2b540>"
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)
+walking:<AMapWalking: 0x7fa2efc6e900> buslines:(
+) enterName:(null) exitName:(null), enterPoint:(null) exitPoint:(null)

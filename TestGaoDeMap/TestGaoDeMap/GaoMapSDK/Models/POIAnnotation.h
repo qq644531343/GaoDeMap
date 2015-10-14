@@ -8,24 +8,19 @@
 
 #import <AMapNaviKit/MAMapKit.h>
 #import <AMapSearchKit/AMapCommonObj.h>
+#import "GaoBaseAnnotation.h"
 
 /**
  *  POI标注
  */
 
-@interface POIAnnotation : NSObject <MAAnnotation>
+@interface POIAnnotation : GaoBaseAnnotation
 
 - (id)initWithPOI:(AMapPOI *)poi;
 
 - (id)initWithTip:(AMapTip *)tip;
 
 @property (nonatomic, strong) AMapPOI *poi;
-
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
-
-@property (nonatomic ,strong) NSString *title;
-
-@property (nonatomic ,strong) NSString *subtitle;
 
 /**
  *  标记

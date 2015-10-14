@@ -10,7 +10,11 @@
 
 #define OutNaviBaseCellHeight 50
 
-@interface OutNaviBaseCell : UITableViewCell
+/**
+ *  步行、自驾导航详情cell
+ */
+
+@interface OutNaviDetailBaseCell : UITableViewCell
 
 //画一个圆
 -(UIView *)getCircleView:(UIColor *)borderColor;
