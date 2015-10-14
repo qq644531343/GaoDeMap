@@ -118,9 +118,15 @@
         cell = startCell;
 
     }else if(indexPath.section > 0 && indexPath.section < 1 + self.transtep.count){
+        
         OutNaviBusCell *buscell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         NSString *str = self.transtep[indexPath.section - 1][indexPath.row];
-        buscell.titlelabel.text = str;
+        [buscell setTitle:str];
+        if (indexPath.row == 0) {
+            [buscell setIconForString:str];
+        }else {
+            [buscell setIconForString:nil];
+        }
         cell = buscell;
     }else{
         
@@ -157,9 +163,19 @@
     NSMutableArray *allStep = [[NSMutableArray alloc] init];
     
     for (AMapSegment *seg in self.transit.segments) {
-        NSMutableArray *oneStep = [[NSMutableArray alloc] init];
+        
+        if (seg.walking) {
+            NSMutableArray *oneStep = [[NSMutableArray alloc] init];
+            AMapWalking *walk = seg.walking;
+            [oneStep addObject:[NSString stringWithFormat:@"步行%@",[GaoMapTool meterToFormatString:walk.distance]]];
+            for (AMapStep *step in walk.steps) {
+                [oneStep addObject:step.instruction];
+            }
+            [allStep addObject:oneStep];
+
+        }
         if (seg.buslines.count > 0) {
-            
+            NSMutableArray *oneStep = [[NSMutableArray alloc] init];
             AMapBusLine *line = seg.buslines[0];
             [oneStep addObject:line.departureStop.name];
             for (AMapBusStop *stop in line.viaBusStops) {
@@ -169,8 +185,6 @@
             [oneStep addObject:line.arrivalStop.name];
             (*stationCount) += 2;
             [allStep addObject:oneStep];
-        }else {
-            
         }
     }
     

@@ -17,7 +17,7 @@
 @interface OutNaviDetailBaseCell : UITableViewCell
 
 //画一个圆
--(UIView *)getCircleView:(UIColor *)borderColor;
+-(UIView *)getCircleView:(UIColor *)borderColor radius:(float)radius;
 
 @property (nonatomic, strong) UIImageView *iconImage;
 

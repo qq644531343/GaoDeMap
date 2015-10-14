@@ -14,4 +14,11 @@
 
 @interface OutNaviBusCell : OutNaviDetailBaseCell
 
+/**
+ *  section行首传str换乘信息，其他传nil即可
+ *
+ *  @param str
+ */
+-(void)setIconForString:(NSString *)str;
+
 @end

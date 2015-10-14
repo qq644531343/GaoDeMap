@@ -23,7 +23,7 @@
         self.iconImage.hidden = YES;
         self.clipsToBounds = YES;
         
-        circle = [self getCircleView:[UIColor redColor]];
+        circle = [self getCircleView:[UIColor redColor] radius:18];
         circle.center = CGPointMake(20+15, OutNaviBaseCellHeight/2.0+3);
         [self.contentView addSubview:circle];
         

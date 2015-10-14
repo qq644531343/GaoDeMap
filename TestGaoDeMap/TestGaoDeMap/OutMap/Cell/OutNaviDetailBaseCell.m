@@ -41,9 +41,9 @@
 }
 
 //画一个圆
--(UIView *)getCircleView:(UIColor *)borderColor
+-(UIView *)getCircleView:(UIColor *)borderColor radius:(float)radius
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, radius, radius)];
     view.backgroundColor = [UIColor whiteColor];
     view.layer.borderColor = borderColor.CGColor;
     view.layer.borderWidth = 1;
