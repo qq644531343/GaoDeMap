@@ -20,6 +20,8 @@
 
 @property (nonatomic, strong) AMapRoute *currentRoute;
 
+@property (nonatomic, strong) AMapTransit *currentTransit;
+
 @end
 
 @implementation OutNaviViewController
@@ -120,7 +122,7 @@
     }
     __weak OutNaviViewController *weakself = self;
     [self.mapview naviMineToDest:self.parentVC.destAnnotation type:type strategy:strategy finished:^(AMapRoute *route) {
-        [weakself.parentVC.detailView refreshWithData:route annotation:weakself.parentVC.destAnnotation type:2];
+        [weakself.parentVC.detailView refreshWithData:route tran:nil  annotation:weakself.parentVC.destAnnotation type:2];
         weakself.currentRoute = route;
         
         if (weakself.barView.currentNaviType == 2) {
@@ -152,8 +154,11 @@
     
     __weak OutNaviViewController *weakself = self;
     [self.mapview naviMineToDest:self.parentVC.destAnnotation type:2 strategy:strategy finished:^(AMapRoute *route) {
+        
         weakself.currentRoute = route;
-        [weakself.tableview reloadData];
+        if (weakself.barView.currentNaviType == 2) {
+            [weakself.tableview reloadData];
+        }
     }];
 
 }
@@ -201,11 +206,22 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AMapTransit *transit = self.currentRoute.transits[indexPath.row];
-    
+    self.currentTransit = self.currentRoute.transits[indexPath.row];
+    [self gotoBusRouteVC];
+}
+
+//跳转公交导航详情
+-(void)gotoBusRouteVC
+{
     OutBusRouteViewController *vc = [[OutBusRouteViewController alloc] init];
-    vc.transit = transit;
+    vc.transit = _currentTransit;
     [self.navigationController pushViewController:vc animated:YES];
+    
+    __weak OutNaviViewController *weakself = self;
+    vc.backBtnClicked = ^(){
+        [weakself.parentVC.detailView refreshWithData:weakself.currentRoute tran:weakself.currentTransit annotation:weakself.parentVC.destAnnotation type:OutBottomTypeRoute];
+        [weakself showContentView:NO];
+    };
 }
 
 #pragma mark - Other

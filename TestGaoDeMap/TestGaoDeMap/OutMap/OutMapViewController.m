@@ -63,7 +63,7 @@
             [weakself showOutDetailView:NO];
         }else {
             weakself.destAnnotation = annotation;
-            [weakself.detailView refreshWithData:nil annotation:annotation type:OutBottomTypeDest];
+            [weakself.detailView refreshWithData:nil tran:nil  annotation:annotation type:OutBottomTypeDest];
             [weakself showOutDetailView:YES];
         }
     };
@@ -98,7 +98,7 @@
 {
     self.detailView = [OutBottomView addViewOn:self.view marginBottom:15 marginLeft:10];
     self.detailView.parentVC = self;
-    [self.detailView refreshWithData:nil annotation:nil type:OutBottomTypeDest];
+    [self.detailView refreshWithData:nil tran:nil annotation:nil type:OutBottomTypeDest];
     
     __weak OutMapViewController *weakself = self;
     self.detailView.btnClicked = ^(UIButton *btn){
@@ -111,11 +111,17 @@
         }else if(weakself.detailView.type == OutBottomTypeRoute) {
             NSLog(@"路线详情");
             
-            OutRouteViewController *route = [[OutRouteViewController alloc] init];
-            route.route = weakself.naviVC.currentRoute;
-            route.currentNaviType = weakself.naviVC.barView.currentNaviType;
-            [weakself.navigationController pushViewController:route animated:YES];
-            
+            if (weakself.naviVC.barView.currentNaviType == 2) {
+                if(weakself.naviVC.currentTransit) {
+                    [weakself.naviVC gotoBusRouteVC];
+                }
+            }else {
+                OutRouteViewController *route = [[OutRouteViewController alloc] init];
+                route.route = weakself.naviVC.currentRoute;
+                route.currentNaviType = weakself.naviVC.barView.currentNaviType;
+                [weakself.navigationController pushViewController:route animated:YES];
+
+            }
         }else if(weakself.detailView.type == OutBottomTypePOI){
             NSLog(@"POI详情");
         }

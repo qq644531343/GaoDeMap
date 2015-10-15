@@ -95,4 +95,41 @@ double getDistance(double lat1, double lon1, double lat2, double lon2)
     }
 }
 
++ (NSArray *)getStations:(int *)stationCount transit:(AMapTransit *)transit
+{
+    NSMutableArray *allStep = [[NSMutableArray alloc] init];
+    
+    for (AMapSegment *seg in transit.segments) {
+        
+        if (seg.walking) {
+            NSMutableArray *oneStep = [[NSMutableArray alloc] init];
+            AMapWalking *walk = seg.walking;
+            [oneStep addObject:[NSString stringWithFormat:@"步行%@",[GaoMapTool meterToFormatString:walk.distance]]];
+            for (AMapStep *step in walk.steps) {
+                [oneStep addObject:step.instruction];
+            }
+            [allStep addObject:oneStep];
+            
+        }
+        if (seg.buslines.count > 0) {
+            NSMutableArray *oneStep = [[NSMutableArray alloc] init];
+            AMapBusLine *line = seg.buslines[0];
+            [oneStep addObject:line.name];
+            //起点站
+            [oneStep addObject:[NSString stringWithFormat:@"从%@上车",line.departureStop.name]];
+            //途径站
+            for (AMapBusStop *stop in line.viaBusStops) {
+                [oneStep addObject:stop.name];
+                (*stationCount)++;
+            }
+            //终点站
+            [oneStep addObject:line.arrivalStop.name];
+            (*stationCount) += 2;
+            [allStep addObject:oneStep];
+        }
+    }
+    
+    return allStep;
+}
+
 @end

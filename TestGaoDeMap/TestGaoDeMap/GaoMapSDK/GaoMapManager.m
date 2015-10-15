@@ -80,8 +80,23 @@
         annotationView.canShowCallout = YES;
         return annotationView;
         
-    }else {
+    }else  if([annotation isKindOfClass:[MANaviAnnotation class]]){
         
+        MAAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:@"other"];
+        MANaviAnnotation *naviAnno = (MANaviAnnotation *)annotation;
+        
+        if (view == nil) {
+            view = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"other"];
+        }
+        view.canShowCallout = YES;
+        if (naviAnno.type == MANaviAnnotationTypeBus) {
+            view.image = [UIImage imageNamed:@"gao_navi_5H"];
+        }else if(naviAnno.type == MANaviAnnotationTypeDrive){
+        view.image = [UIImage imageNamed:@"gao_navi_4"];
+        }else {
+            view.image = [UIImage imageNamed:@"gao_navi_6H"];
+        }
+        annotationView = view;
     }
 
     //设置中心点偏移，使得标注底部中间点成为经纬度对应点

@@ -61,7 +61,7 @@
     
 }
 
--(void)refreshWithData:(AMapRoute *)route annotation:(GaoBaseAnnotation *)anno type:(OutBottomType)type
+-(void)refreshWithData:(AMapRoute *)route tran:(AMapTransit *)transit annotation:(GaoBaseAnnotation *)anno type:(OutBottomType)type
 {
     _type = type;
     _myHeight = 0;
@@ -87,7 +87,7 @@
     }else if(type == OutBottomTypeRoute) {
         
         _myHeight = 60;
-        [self addViewForRoute:route];
+        [self addViewForRoute:route tran:transit];
     }
     
     self.frame = CGRectMake(self.leftMargin, self.superview.frame.size.height - self.bottomMargin - _myHeight, self.superview.frame.size.width - 2*self.leftMargin, _myHeight);
@@ -210,7 +210,7 @@
     [btnGo addTarget:self action:@selector(goBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)addViewForRoute:(AMapRoute *)route
+-(void)addViewForRoute:(AMapRoute *)route tran:(AMapTransit *)transit
 {
     UILabel *labelDistance = [[UILabel alloc] initWithFrame:CGRectMake(LEFT_MARGIN, 0, self.frame.size.width - 2*LEFT_MARGIN - 50, _myHeight)];
     labelDistance.text = @"约0分钟 (0米)";
@@ -226,11 +226,22 @@
     
     [btnGo addTarget:self action:@selector(goBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    if (route.paths.count == 0) {
-        return;
+    //公交
+    if (route.paths.count == 0 && transit != nil) {
+        
+        int stationCount = 0;
+        [GaoMapTool getStations:&stationCount transit:transit];
+        
+         labelDistance.text = [NSString stringWithFormat:@"约%@（共%d站）",
+                               [GaoMapTool secondsToFormatString:transit.duration],
+                               stationCount
+                              ];
+    }else {
+    //步行和自驾
+        AMapPath *path = route.paths[0];
+        labelDistance.text = [NSString stringWithFormat:@"约%@（%@）",[GaoMapTool secondsToFormatString:path.duration], [GaoMapTool secondsToFormatString:path.distance]];
     }
-    AMapPath *path = route.paths[0];
-    labelDistance.text = [NSString stringWithFormat:@"约%@（%@）",[GaoMapTool secondsToFormatString:path.duration], [GaoMapTool secondsToFormatString:path.distance]];
+   
 }
 
 -(void)goBtnClicked:(UIButton *)btn

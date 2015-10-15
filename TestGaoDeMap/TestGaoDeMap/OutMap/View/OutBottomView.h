@@ -33,8 +33,10 @@ typedef enum OutBottomType{
 
 /**
  *  填充数据
+ *  对于步行/自驾，需传AMapRoute
+ *  对于公交，需传AMapRoute 和 被选择的AMapTransit
  */
--(void)refreshWithData:(AMapRoute *)route annotation:(GaoBaseAnnotation *)anno type:(OutBottomType)type;
+-(void)refreshWithData:(AMapRoute *)route tran:(AMapTransit *)transit annotation:(GaoBaseAnnotation *)anno type:(OutBottomType)type;
 
 /**
  *  控件实际高度

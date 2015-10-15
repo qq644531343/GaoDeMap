@@ -39,17 +39,19 @@
         circle.hidden = NO;
         self.iconImage.hidden = YES;
         self.titlelabel.font = [UIFont systemFontOfSize:12];
+        self.titlelabel.textColor = [UIColor darkGrayColor];
         self.bottomLine.frame = CGRectMake(0, 0, 0, 0);
     }else {
         circle.hidden = YES;
         self.iconImage.hidden = NO;
         NSRange rangeBuXing = [str rangeOfString:@"步行"];
         if (rangeBuXing.location != NSNotFound) {
-            self.iconImage.image = [UIImage imageNamed:@"gao_bus_step"];
+            self.iconImage.image = [UIImage imageNamed:@"gao_navi_6"];
         }else{
-            self.iconImage.image = [UIImage imageNamed:@"gao_bus_gray"];
+            self.iconImage.image = [UIImage imageNamed:@"gao_navi_5"];
         }
         self.titlelabel.font = [UIFont systemFontOfSize:15];
+        self.titlelabel.textColor = [UIColor blackColor];
         self.bottomLine.frame = CGRectMake(62, 10, GAO_SIZE.width -40, 0.5);
     }
 }

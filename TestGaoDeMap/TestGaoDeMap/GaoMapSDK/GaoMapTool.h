@@ -52,4 +52,14 @@ double getDistance(double lat1, double lon1, double lat2, double lon2);
  */
 + (NSString *)generateBusline:(AMapTransit *)transit;
 
+/**
+ *  解析站点名
+ *
+ *  @param stationCount 返回共有多少站地
+ *  @param transit      公交路线
+ *
+ *  @return 返回公交路线字符串数组
+ */
++ (NSArray *)getStations:(int *)stationCount transit:(AMapTransit *)transit;
+
 @end

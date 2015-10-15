@@ -29,8 +29,15 @@
 
 @property (nonatomic, strong, readonly) AMapRoute *currentRoute;
 
+@property (nonatomic, strong, readonly) AMapTransit *currentTransit;
+
 @property (nonatomic ,strong)  OutTopBarView *barView;
 
+//显示naviBar
 @property (nonatomic, readwrite) BOOL show;
+
+//跳转公交导航详情
+-(void)gotoBusRouteVC;
+
 
 @end

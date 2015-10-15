@@ -34,6 +34,7 @@
     [super viewDidLoad];
    
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"公交路线导航详情";
     
     [self addTopView];
     
@@ -63,7 +64,7 @@
     infoLabel.frame = CGRectMake(LEFT_MARGIN, busLabel.frame.origin.y + busLabel.frame.size.height+2, weith, 16);
     
     int stationCount = 0;
-    self.transtep = [self getStations:&stationCount];
+    self.transtep = [GaoMapTool getStations:&stationCount transit:self.transit];
     busLabel.text = busline;
     infoLabel.text = [NSString stringWithFormat:@"约%@ 乘车%d站地 步行%@",
                       [GaoMapTool secondsToFormatString:self.transit.duration],
@@ -155,40 +156,18 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.backBtnClicked) {
+        self.backBtnClicked();
+    }
+    [self.navigationController popViewControllerAnimated:NO];
+    
+}
+
 
 #pragma mark - Other
 
--(NSArray *)getStations:(int *)stationCount
-{
-    NSMutableArray *allStep = [[NSMutableArray alloc] init];
-    
-    for (AMapSegment *seg in self.transit.segments) {
-        
-        if (seg.walking) {
-            NSMutableArray *oneStep = [[NSMutableArray alloc] init];
-            AMapWalking *walk = seg.walking;
-            [oneStep addObject:[NSString stringWithFormat:@"步行%@",[GaoMapTool meterToFormatString:walk.distance]]];
-            for (AMapStep *step in walk.steps) {
-                [oneStep addObject:step.instruction];
-            }
-            [allStep addObject:oneStep];
 
-        }
-        if (seg.buslines.count > 0) {
-            NSMutableArray *oneStep = [[NSMutableArray alloc] init];
-            AMapBusLine *line = seg.buslines[0];
-            [oneStep addObject:line.departureStop.name];
-            for (AMapBusStop *stop in line.viaBusStops) {
-                [oneStep addObject:stop.name];
-                (*stationCount)++;
-            }
-            [oneStep addObject:line.arrivalStop.name];
-            (*stationCount) += 2;
-            [allStep addObject:oneStep];
-        }
-    }
-    
-    return allStep;
-}
 
 @end

@@ -21,4 +21,9 @@
  */
 @property (nonatomic, strong) AMapTransit *transit;
 
+/**
+ *  点击跳地图的事件回调
+ */
+@property (nonatomic,copy) void(^backBtnClicked)();
+
 @end
