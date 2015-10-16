@@ -122,14 +122,33 @@ double getDistance(double lat1, double lon1, double lat2, double lon2)
                 [oneStep addObject:stop.name];
                 (*stationCount)++;
             }
-            //终点站
-            [oneStep addObject:line.arrivalStop.name];
+             //终点站
+            [oneStep addObject:[NSString stringWithFormat:@"在%@下车",line.arrivalStop.name]];
             (*stationCount) += 2;
             [allStep addObject:oneStep];
         }
     }
     
     return allStep;
+}
+
++(void)collectionActions:(NSString *)action
+{
+    if (action.length == 0) {
+        return;
+    }
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://10.2.94.184:8080/jsp/main/action.jsp"]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *body = [NSString stringWithFormat:@"action=%@",action];
+    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [request setHTTPBody:data];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+       
+    }];
+
 }
 
 @end

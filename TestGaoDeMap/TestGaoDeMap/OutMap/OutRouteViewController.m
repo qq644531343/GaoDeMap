@@ -107,6 +107,9 @@
     }else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"basecell"];
         AMapStep *step = stepPath.steps[indexPath.row - 1];
+//        [GaoMapTool collectionActions:step.action];
+        
+        [self configCellFor:cell step:step];
         [cell setTitle:step.instruction];
     }
     
@@ -152,6 +155,32 @@
     
     label.text = str;
     label.contentMode = UIViewContentModeTopLeft;
+}
+
+-(void)configCellFor:(OutNaviDetailBaseCell *)cell step:(AMapStep *)step
+{
+    if (step.action.length == 0) {
+        cell.iconImage.image = [UIImage imageNamed:step.assistantAction];
+    }else {
+        if ([step.action rangeOfString:@"向左前方"].location != NSNotFound) {
+            cell.iconImage.image = [UIImage imageNamed:@"向左前方"];
+        }else if([step.action rangeOfString:@"向右前方"].location != NSNotFound){
+             cell.iconImage.image = [UIImage imageNamed:@"向右前方"];
+        }else if([step.action rangeOfString:@"向左后方"].location != NSNotFound){
+            cell.iconImage.image = [UIImage imageNamed:@"向左后方"];
+        }else if([step.action rangeOfString:@"向右后方"].location != NSNotFound){
+            cell.iconImage.image = [UIImage imageNamed:@"向右后方"];
+        }else if([step.action rangeOfString:@"直行"].location != NSNotFound || [step.action rangeOfString:@"往前走"].location != NSNotFound){
+            cell.iconImage.image = [UIImage imageNamed:@"直行"];
+        }else {
+            cell.iconImage.image = [UIImage imageNamed:step.action];
+        }
+        
+        if (cell.iconImage.image == nil) {
+            NSLog(@"没有找到图片:%@",step.action);
+        }
+    }
+
 }
 
 -(void)dealloc

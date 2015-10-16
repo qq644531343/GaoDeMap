@@ -62,4 +62,7 @@ double getDistance(double lat1, double lon1, double lat2, double lon2);
  */
 + (NSArray *)getStations:(int *)stationCount transit:(AMapTransit *)transit;
 
+//统计action
++(void)collectionActions:(NSString *)action;
+
 @end
