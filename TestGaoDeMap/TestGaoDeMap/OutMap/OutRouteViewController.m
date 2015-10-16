@@ -74,12 +74,13 @@
     self.tableview.dataSource = self;
     self.tableview.tableFooterView = [UIView new];
     self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    [self.view addSubview:self.tableview];
-    
+
     [self.tableview registerClass:[OutNaviDetailBaseCell class] forCellReuseIdentifier:@"basecell"];
     [self.tableview registerClass:[OutNaviStartCell class] forCellReuseIdentifier:@"celltop"];
     [self.tableview registerClass:[OutNaviStartCell class] forCellReuseIdentifier:@"cellbottom"];
+    
+    [self.view addSubview:self.tableview];
+    
 }
 
 #pragma mark - UITableView
@@ -94,20 +95,34 @@
     OutNaviDetailBaseCell *cell = nil;
     
     if (indexPath.row == 0) {
-        OutNaviStartCell *startCell = [tableView dequeueReusableCellWithIdentifier:@"celltop"];
+        OutNaviStartCell *startCell = [tableView dequeueReusableCellWithIdentifier:@"celltop" ];
+        if (!startCell) {
+            startCell = [[OutNaviStartCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                         reuseIdentifier:@"celltop"];
+        }
+        
         startCell.type = 0;
         startCell.titlelabel.text = @"起点";
         cell = startCell;
     }else if(indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1)
     {
-         OutNaviStartCell *endCell = [tableView dequeueReusableCellWithIdentifier:@"cellbottom"];
+         OutNaviStartCell *endCell = [tableView dequeueReusableCellWithIdentifier:@"cellbottom" ];
+        if (!endCell) {
+            endCell = [[OutNaviStartCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                reuseIdentifier:@"cellbottom"];
+        }
+        
         endCell.type = 1;
         endCell.titlelabel.text = @"终点";
         cell = endCell;
     }else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"basecell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"basecell" ];
+        if (!cell) {
+            cell = [[OutNaviDetailBaseCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                              reuseIdentifier:@"basecell"];
+        }
         AMapStep *step = stepPath.steps[indexPath.row - 1];
-//        [GaoMapTool collectionActions:step.action];
+        [GaoMapTool collectionActions:step.action];
         
         [self configCellFor:cell step:step];
         [cell setTitle:step.instruction];

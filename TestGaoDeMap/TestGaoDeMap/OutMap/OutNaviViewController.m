@@ -183,7 +183,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OutBusInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    OutBusInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" ];
+    if (!cell) {
+        cell = [[OutBusInfoCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                            reuseIdentifier:@"cell"];
+    }
     
     AMapTransit *tran = self.currentRoute.transits[indexPath.row];
     NSString *busline = [GaoMapTool generateBusline:tran];

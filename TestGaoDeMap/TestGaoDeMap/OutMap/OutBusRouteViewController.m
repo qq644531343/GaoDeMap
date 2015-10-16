@@ -113,14 +113,23 @@
     UITableViewCell *cell = nil;
     
     if (indexPath.section == 0) {
-        OutNaviStartCell *startCell = [tableView dequeueReusableCellWithIdentifier:@"celltop"];
+        OutNaviStartCell *startCell = [tableView dequeueReusableCellWithIdentifier:@"celltop" ];
+        if (!startCell) {
+            startCell = [[OutNaviStartCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                reuseIdentifier:@"celltop"];
+        }
         startCell.type = 0;
         startCell.titlelabel.text = @"起点";
         cell = startCell;
 
     }else if(indexPath.section > 0 && indexPath.section < 1 + self.transtep.count){
         
-        OutNaviBusCell *buscell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        OutNaviBusCell *buscell = [tableView dequeueReusableCellWithIdentifier:@"cell" ];
+        if (!buscell) {
+            buscell = [[OutNaviBusCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                reuseIdentifier:@"cell"];
+        }
+        
         NSString *str = self.transtep[indexPath.section - 1][indexPath.row];
         [buscell setTitle:str];
         if (indexPath.row == 0) {
@@ -131,7 +140,12 @@
         cell = buscell;
     }else{
         
-        OutNaviStartCell *endCell = [tableView dequeueReusableCellWithIdentifier:@"cellbottom"];
+        OutNaviStartCell *endCell = [tableView dequeueReusableCellWithIdentifier:@"cellbottom" ];
+        if (!endCell) {
+            endCell = [[OutNaviStartCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                        reuseIdentifier:@"cellbottom"];
+        }
+        
         endCell.type = 1;
         endCell.titlelabel.text = @"终点";
         cell = endCell;

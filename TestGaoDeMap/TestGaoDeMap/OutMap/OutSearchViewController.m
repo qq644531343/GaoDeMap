@@ -74,7 +74,7 @@
     UITableViewCell *cell;
     
     static NSString *mapStoreCellIdentifier = @"cell";
-    cell = [tableView dequeueReusableCellWithIdentifier:mapStoreCellIdentifier];
+    cell = [tableView dequeueReusableCellWithIdentifier:mapStoreCellIdentifier forIndexPath:indexPath];
     tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     AMapTip *tip = self.mapStoreListArray[indexPath.row];
     cell.textLabel.text = tip.name;
