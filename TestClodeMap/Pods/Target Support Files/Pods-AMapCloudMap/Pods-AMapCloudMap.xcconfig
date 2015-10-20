@@ -1,0 +1,3 @@
+PODS_AMAPCLOUDMAP_ARCHS = $(ARCHS_STANDARD) , armv7s
+PODS_AMAPCLOUDMAP_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/AMapCloudMap"
+PODS_AMAPCLOUDMAP_OTHER_LDFLAGS = -ObjC -l"stdc++.6.0.9" -l"z" -framework "AMapCloudKit" -framework "CoreLocation" -framework "CoreTelephony" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration"

@@ -7,9 +7,6 @@ inhibit_all_warnings!
 
 platform :ios, '7.0'
 
-#pod 'AMap3DMap'
-#pod 'AMap2DMap'
 pod 'AMapSearch', '3.0.0'
-pod 'AMapNavi' , '1.3.1' #导航，包含AMap3DMap
-
-
+pod 'AMapNavi'  #导航，包含AMap3DMap
+#pod 'AMapCloudMap'
