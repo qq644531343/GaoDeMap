@@ -13,6 +13,7 @@
 #import <AMapNaviKit/AMapNaviKit.h>
 #import <AMapNaviKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
+#import <AMapCloudKit/AMapCloudAPI.h>
 
 #import "GaoMapConfig.h"
 #import "GaoMapView.h"
@@ -25,6 +26,8 @@
 //  a54da15acea702a9c1c3209c9ce38d56
 //9fa23e2da3ea9ff665e68b2c72bcec3e
 #define GAO_APP_KEY @"9fa23e2da3ea9ff665e68b2c72bcec3e"
+
+#define GAO_CLOUD_TABLEID   @"5625c02fe4b0d36c58c1d9e9"
 
 //屏幕尺寸
 #define GAO_SIZE  [[UIScreen mainScreen] bounds].size

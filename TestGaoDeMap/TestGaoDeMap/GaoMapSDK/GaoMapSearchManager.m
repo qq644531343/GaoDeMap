@@ -13,6 +13,8 @@
 
 @property (nonatomic ,strong) AMapSearchAPI *search;
 
+@property (nonatomic, strong) AMapCloudAPI *cloudAPI;
+
 @property (nonatomic ,strong) NSMutableArray *finishBlocks;
 
 @end
@@ -38,6 +40,54 @@
     SearchFinished block = [self popBlockForRequest:request];
     if (block) {
         block(error,nil, nil);
+        block = nil;
+    }
+}
+
+/*!
+ @brief Cloud查询失败
+ */
+- (void)cloudRequest:(id)cloudSearchRequest error:(NSError *)error
+{
+    SearchFinished block = [self popBlockForRequest:cloudSearchRequest];
+    if (block) {
+        block(error,nil, nil);
+        block = nil;
+    }
+}
+
+/*!
+ @brief Cloud周边查询回调函数
+ */
+- (void)onCloudPlaceAroundSearchDone:(AMapCloudPlaceAroundSearchRequest *)request response:(AMapCloudSearchResponse *)response
+{
+    SearchFinished block = [self popBlockForRequest:request];
+    if (block) {
+        block(nil, response.POIs, nil);
+        block = nil;
+    }
+}
+
+/*!
+ @brief  Cloud ID查询回调函数
+ */
+- (void)onCloudPlaceIDSearchDone:(AMapCloudPlaceIDSearchRequest *)request response:(AMapCloudSearchResponse *)response
+{
+    SearchFinished block = [self popBlockForRequest:request];
+    if (block) {
+        block(nil, response.POIs, nil);
+        block = nil;
+    }
+}
+
+/*!
+ @brief Cloud 本地查询回调函数
+ */
+- (void)onCloudPlaceLocalSearchDone:(AMapCloudPlaceLocalSearchRequest *)request response:(AMapCloudSearchResponse *)response
+{
+    SearchFinished block = [self popBlockForRequest:request];
+    if (block) {
+        block(nil, response.POIs, nil);
         block = nil;
     }
 }
@@ -255,6 +305,57 @@
     [self.search AMapReGoecodeSearch:request];
     [self pushBlockForRequest:request block:block];
 }
+
+#pragma mark - 云图POI
+
+-(void)searchCloudPOIWithCity:(NSString *)city keywords:(NSString *)key isRefresh:(BOOL)refresh finish:(SearchFinished)block
+{
+    AMapCloudPlaceLocalSearchRequest *request = [[AMapCloudPlaceLocalSearchRequest alloc] init];
+    
+    [request setTableID:[GaoMapConfig sharedConfig].tableId];
+    [request setCity:city];
+    if (key.length > 0) {
+        request.keywords = key;
+    }
+    request.offset = 100;
+    [self.cloudAPI AMapCloudPlaceLocalSearch:request];
+    
+    [self pushBlockForRequest:request block:block];
+}
+
+-(void)searchCloudPOIWithID:(NSInteger)ID  finish:(SearchFinished)block
+{
+    AMapCloudPlaceIDSearchRequest *request = [[AMapCloudPlaceIDSearchRequest alloc] init];
+    [request setTableID:[GaoMapConfig sharedConfig].tableId];
+    
+    //设置要查询的ID
+    [request setID:ID];
+    [self.cloudAPI AMapCloudPlaceIDSearch:request];
+    
+    [self pushBlockForRequest:request block:block];
+}
+
+- (void)searchCloudPOIWithPoint:(CLLocationCoordinate2D)coor keywords:(NSString *)key  finish:(SearchFinished)block
+{
+    AMapCloudPoint *centerPoint = [AMapCloudPoint locationWithLatitude:coor.latitude longitude:coor.longitude];
+    
+    AMapCloudPlaceAroundSearchRequest *request = [[AMapCloudPlaceAroundSearchRequest alloc] init];
+    [request setTableID:[GaoMapConfig sharedConfig].tableId];
+    request.radius = 5000;
+    request.center = centerPoint;
+    
+    if (key.length > 0) {
+        request.keywords = key;
+    }
+    request.offset = 100;
+    
+    [self.cloudAPI AMapCloudPlaceAroundSearch:request];
+    
+    [self pushBlockForRequest:request block:block];
+    
+    //    [self addMACircleViewWithCenter:CLLocationCoordinate2DMake(centerPoint.latitude, centerPoint.longitude) radius:radius];
+}
+
 
 #pragma mark - pop finished block
 

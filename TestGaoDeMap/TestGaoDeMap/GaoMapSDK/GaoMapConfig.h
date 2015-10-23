@@ -21,4 +21,7 @@
  */
 -(void)setup;
 
+//高德云图标识
+@property (nonatomic,readonly,strong) NSString *tableId;
+
 @end

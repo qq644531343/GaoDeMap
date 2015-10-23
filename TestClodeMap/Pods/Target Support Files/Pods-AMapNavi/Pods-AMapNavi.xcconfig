@@ -1,3 +1,0 @@
-PODS_AMAPNAVI_ARCHS = $(ARCHS_STANDARD), armv7s
-PODS_AMAPNAVI_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/AMapNavi"
-PODS_AMAPNAVI_OTHER_LDFLAGS = -ObjC -l"stdc++.6.0.9" -l"z" -framework "AMapNaviKit" -framework "CoreLocation" -framework "CoreTelephony" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration"

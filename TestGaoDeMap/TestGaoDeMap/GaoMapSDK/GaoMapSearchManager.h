@@ -129,5 +129,27 @@ typedef void(^RevserGeoFinished)(NSError *error, AMapReGeocode *res);
  */
 -(void)reverseGeoSearchByCoor:(CLLocationCoordinate2D)coor finish:(RevserGeoFinished)block;
 
+#pragma mark - 云图POI
+/**
+ *  本地检索
+ *  city为必选
+ *  refresh为YES刷新，NO为加载更多
+ */
+-(void)searchCloudPOIWithCity:(NSString *)city keywords:(NSString *)key isRefresh:(BOOL)refresh finish:(SearchFinished)block;
+
+/**
+ *  POI ID检索
+ *  city为必选
+ *  refresh为YES刷新，NO为加载更多
+ */
+-(void)searchCloudPOIWithID:(NSInteger)ID finish:(SearchFinished)block;
+
+/**
+ *  搜索周边POI
+ *
+ *  @param coor 中心点
+ *  @param key  可选关键字
+ */
+- (void)searchCloudPOIWithPoint:(CLLocationCoordinate2D)coor keywords:(NSString *)key finish:(SearchFinished)block;
 
 @end

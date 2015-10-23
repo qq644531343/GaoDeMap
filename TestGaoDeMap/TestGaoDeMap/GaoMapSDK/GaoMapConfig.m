@@ -9,6 +9,10 @@
 #import "GaoMapConfig.h"
 #import "GaoMapHeaders.h"
 
+@interface GaoMapConfig ()
+@property (nonatomic,strong) NSString *tableId;
+@end
+
 @implementation GaoMapConfig
 
 #pragma mark - Init
@@ -35,6 +39,7 @@
 {
     [MAMapServices sharedServices].apiKey = GAO_APP_KEY;
     [AMapSearchServices sharedServices].apiKey = GAO_APP_KEY;
+    self.tableId = GAO_CLOUD_TABLEID;
 }
 
 #pragma mark -
