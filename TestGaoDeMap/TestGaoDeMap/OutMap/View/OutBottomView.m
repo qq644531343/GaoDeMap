@@ -203,7 +203,7 @@
     btnGo.layer.cornerRadius = 2;
     btnGo.backgroundColor = GaoColorWithRGB(0x3C9BFA);
     [btnGo setTitle:@"带我去" forState:UIControlStateNormal];
-    [btnGo setImage:[UIImage imageNamed:@"gao_navi_3"] forState:UIControlStateNormal];
+    [btnGo setImage:[UIImage imageNamed:@"gao_location_icon"] forState:UIControlStateNormal];
     btnGo.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
     [self addSubview:btnGo];
     
