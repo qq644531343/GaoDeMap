@@ -10,6 +10,7 @@
 #import "GaoMapHeaders.h"
 #import "CusAnnotationView.h"
 
+
 #import "GaoNaviPolyline.h"
 
 @implementation GaoMapManager
@@ -53,20 +54,27 @@
         
     }else if([annotation isKindOfClass:[GaoBaseAnnotation class]]){
         
-        annotationView = [self annotationViewForBase:annotation];
-        annotationView.canShowCallout = NO;
+//        annotationView = [self annotationViewForBase:annotation];
+//        annotationView.canShowCallout = NO;
+//        
+//        GaoBaseAnnotationView *view = (GaoBaseAnnotationView *)annotationView;
+//        if([(GaoBaseAnnotation *)annotation type] == 1){
+//            view.labelText.text = nil;
+//            view.image = [UIImage imageNamed:@"gao_anno_start"];
+//        }else if([(GaoBaseAnnotation *)annotation type] == 2)
+//        {
+//            view.labelText.text = nil;
+//            view.image = [UIImage imageNamed:@"gao_anno_end"];
+//        }else {
+//           
+//        }
         
-        GaoBaseAnnotationView *view = (GaoBaseAnnotationView *)annotationView;
-        if([(GaoBaseAnnotation *)annotation type] == 1){
-            view.labelText.text = nil;
-            view.image = [UIImage imageNamed:@"gao_anno_start"];
-        }else if([(GaoBaseAnnotation *)annotation type] == 2)
-        {
-            view.labelText.text = nil;
-            view.image = [UIImage imageNamed:@"gao_anno_end"];
-        }else {
-           
+        GaoPOIAnnotationView *poi = (GaoPOIAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"poi"];
+        if (poi == nil) {
+            poi = [[GaoPOIAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"poi"];
         }
+        annotationView = poi;
+        
     }else if([annotation isKindOfClass:[MAUserLocation class]]){
          /* 自定义userLocation对应的annotationView. */
         static NSString *userAnId = @"userAnId";
@@ -249,11 +257,12 @@
     
     MATouchPoi *touch = [pois lastObject];
     GaoBaseAnnotation *annotation = [[GaoBaseAnnotation alloc] init];
-    annotation.coordinate = touch.coordinate;
+    annotation.coordinate = CLLocationCoordinate2DMake(30.280543, 120.029016);//touch.coordinate;
     annotation.title = touch.name;
     [self.map cleanMapView];
     [self.map addMyAnnotationBase:[NSArray arrayWithObject:annotation]];
     [self.map selectAnnotation:annotation animated:YES];
+
 }
 
 #pragma mark - ViewTool

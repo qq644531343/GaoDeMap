@@ -22,12 +22,16 @@
 #import "GaoMapSearchManager.h"
 #import "GaoBaseAnnotationView.h"
 #import "POIAnnotation.h"
+#import "GaoPOIAnnotationView.h"
 
 //  a54da15acea702a9c1c3209c9ce38d56
 //9fa23e2da3ea9ff665e68b2c72bcec3e
 #define GAO_APP_KEY @"9fa23e2da3ea9ff665e68b2c72bcec3e"
 
-#define GAO_CLOUD_TABLEID   @"5625c02fe4b0d36c58c1d9e9"
+#define GAO_CLOUD_TABLEID   @"562d9ad7e4b038b7115c26ad"
+
+//搜索通用半径 5000m
+#define GAO_BASE_RADIUS 5000
 
 //屏幕尺寸
 #define GAO_SIZE  [[UIScreen mainScreen] bounds].size

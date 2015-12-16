@@ -150,6 +150,6 @@ typedef void(^RevserGeoFinished)(NSError *error, AMapReGeocode *res);
  *  @param coor 中心点
  *  @param key  可选关键字
  */
-- (void)searchCloudPOIWithPoint:(CLLocationCoordinate2D)coor keywords:(NSString *)key finish:(SearchFinished)block;
+- (void)searchCloudPOIWithPoint:(CLLocationCoordinate2D)coor keywords:(NSString *)key isRefresh:(BOOL)refresh finish:(SearchFinished)block;
 
 @end

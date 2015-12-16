@@ -9,7 +9,10 @@
 #import "GaoMapSearchManager.h"
 #import "GaoMapHeaders.h"
 
-@interface GaoMapSearchManager () <AMapSearchDelegate>
+@interface GaoMapSearchManager () <AMapSearchDelegate,AMapCloudDelegate>
+{
+    int pointPOICurrentPage;
+}
 
 @property (nonatomic ,strong) AMapSearchAPI *search;
 
@@ -26,6 +29,7 @@
 {
     GaoMapSearchManager *manager = [[GaoMapSearchManager alloc] init];
     manager.search = [[AMapSearchAPI alloc] init];
+    manager.cloudAPI = [[AMapCloudAPI alloc] initWithCloudKey:GAO_APP_KEY delegate:manager];
     manager.search.delegate = manager;
     manager.finishBlocks = [[NSMutableArray alloc] init];
     return manager;
@@ -335,25 +339,60 @@
     [self pushBlockForRequest:request block:block];
 }
 
-- (void)searchCloudPOIWithPoint:(CLLocationCoordinate2D)coor keywords:(NSString *)key  finish:(SearchFinished)block
+- (void)searchCloudPOIWithPoint:(CLLocationCoordinate2D)coor keywords:(NSString *)key isRefresh:(BOOL)refresh finish:(SearchFinished)block
 {
-    AMapCloudPoint *centerPoint = [AMapCloudPoint locationWithLatitude:coor.latitude longitude:coor.longitude];
+//    AMapCloudPoint *centerPoint = [AMapCloudPoint locationWithLatitude:coor.latitude longitude:coor.longitude];
+//    
+//    AMapCloudPlaceAroundSearchRequest *request = [[AMapCloudPlaceAroundSearchRequest alloc] init];
+//    [request setTableID:[GaoMapConfig sharedConfig].tableId];
+//    request.radius = GAO_BASE_RADIUS;
+//    request.center = centerPoint;
+//    
+//    if (key.length > 0) {
+//        request.keywords = key;
+//    }
+//    
+//    if (refresh || pointPOICurrentPage < 1) {
+//        pointPOICurrentPage = 1;
+//    }
+////    request.offset = 100;
+////    request.page = pointPOICurrentPage;
+//    pointPOICurrentPage++;
+//    
+//    [self.cloudAPI AMapCloudPlaceAroundSearch:request];
+//    
+//    [self pushBlockForRequest:request block:block];
+//    
+//    //    [self addMACircleViewWithCenter:CLLocationCoordinate2DMake(centerPoint.latitude, centerPoint.longitude) radius:radius];
     
-    AMapCloudPlaceAroundSearchRequest *request = [[AMapCloudPlaceAroundSearchRequest alloc] init];
-    [request setTableID:[GaoMapConfig sharedConfig].tableId];
-    request.radius = 5000;
-    request.center = centerPoint;
+    AMapCloudPlaceAroundSearchRequest *placeAround = [[AMapCloudPlaceAroundSearchRequest alloc] init];
+    [placeAround setTableID:@"562d9ad7e4b038b7115c26ad"];
     
-    if (key.length > 0) {
-        request.keywords = key;
-    }
-    request.offset = 100;
+    double radius = 200000;
+    AMapCloudPoint *centerPoint = [AMapCloudPoint locationWithLatitude:30.3467040601 longitude:120.003178729];
     
-    [self.cloudAPI AMapCloudPlaceAroundSearch:request];
+    //设置中心点和半径
+    [placeAround setRadius:radius];
+    [placeAround setCenter:centerPoint];
     
-    [self pushBlockForRequest:request block:block];
+    //设置关键字
+    //    [placeAround setKeywords:@"王府井"];
     
-    //    [self addMACircleViewWithCenter:CLLocationCoordinate2DMake(centerPoint.latitude, centerPoint.longitude) radius:radius];
+    //过滤条件数组filters的含义等同于SQL语句:WHERE _address = "文津街1" AND _id BETWEEN 20 AND 40
+    //    NSArray *filters = [[NSArray alloc] initWithObjects:@"_id:[20,70]", @"_address:文津街", nil];
+    //    [placeAround setFilter:filters];
+    
+    //设置排序方式
+    //    [placeAround setSortFields:@"_id"];
+    //    [placeAround setSortType:AMapCloudSortType_DESC];
+    
+    //设置每页记录数和当前页数
+    [placeAround setOffset:80];
+    //    [placeAround setPage:2];
+    
+    [self.cloudAPI AMapCloudPlaceAroundSearch:placeAround];
+    
+
 }
 
 

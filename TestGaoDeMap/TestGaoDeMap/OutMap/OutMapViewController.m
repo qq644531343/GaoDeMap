@@ -37,6 +37,8 @@
     [self addOutDetailView];
     
     [self addOutNaviView];
+    
+    [self addBasePOI];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -146,6 +148,14 @@
         weakself.searchBar.hidden = NO;
         [weakself showOutDetailView:NO];
     };
+}
+
+-(void)addBasePOI
+{
+    [self.mapview.searchManager searchCloudPOIWithPoint:CLLocationCoordinate2DMake(30.3467040601, 120.003178729) keywords:nil isRefresh:NO finish:^(NSError *error, NSArray *pois, AMapSuggestion *suggestion) {
+       
+    }];
+
 }
 
 #pragma mark - Action

@@ -32,6 +32,7 @@
 		092A5ACB1BC65B2200A57CCC /* GaoBaseAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
 		092A5ACF1BC667F800A57CCC /* OutSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		092BA55B1BCB5F6800FD2CBA /* OutRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		092DA9391BDDFDD20093AB71 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092DA9381BDDFDD20093AB71 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
 		0930907C1BABD58A00AA4E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907B1BABD58A00AA4E72 /* main.m */; };
 		0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907E1BABD58A00AA4E72 /* AppDelegate.m */; };
 		093090851BABD58A00AA4E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093090831BABD58A00AA4E72 /* Main.storyboard */; };
@@ -43,12 +44,12 @@
 		0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BB1BBA8BC100FF85AD /* GaoMapView.m */; };
 		0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */; };
 		0937D9C21BBA956800FF85AD /* GaoMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9C11BBA956800FF85AD /* GaoMapManager.m */; };
+		094C64581BDDD4DD0063CF42 /* GaoPOIAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C64571BDDD4DD0063CF42 /* GaoPOIAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
 		09667AD41BAFA1F900C99397 /* GaoBaseAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */; };
 		09667AD61BAFB0B700C99397 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09667AD51BAFB0B700C99397 /* 1.jpg */; };
 		0986C69B1BCDF377009B9322 /* OutBusInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986C69A1BCDF377009B9322 /* OutBusInfoCell.m */; settings = {ASSET_TAGS = (); }; };
 		09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
 		09DC82D41BCBD700007FCBE2 /* OutMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC82D31BCBD700007FCBE2 /* OutMapViewController.m */; settings = {ASSET_TAGS = (); }; };
-		09DCE03C1BDA3C0600251FCB /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DCE03B1BDA3C0600251FCB /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
 		09E852EF1BCE14F10068B017 /* OutBusRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E852EE1BCE14F10068B017 /* OutBusRouteViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BD3954DB09BA33770B734C15 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB895F2322D4EA44F816DB86 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutSearchViewController.m; sourceTree = "<group>"; };
 		092BA5591BCB5F6800FD2CBA /* OutRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutRouteViewController.h; sourceTree = "<group>"; };
 		092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutRouteViewController.m; sourceTree = "<group>"; };
+		092DA9381BDDFDD20093AB71 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		093090761BABD58A00AA4E72 /* TestGaoDeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGaoDeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930907A1BABD58A00AA4E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0930907B1BABD58A00AA4E72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,6 +137,8 @@
 		0937D9C01BBA956800FF85AD /* GaoMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoMapManager.h; sourceTree = "<group>"; };
 		0937D9C11BBA956800FF85AD /* GaoMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoMapManager.m; sourceTree = "<group>"; };
 		094B9D821BC8EE3200AB64BC /* hangzhou.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = hangzhou.gpx; sourceTree = "<group>"; };
+		094C64561BDDD4DD0063CF42 /* GaoPOIAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoPOIAnnotationView.h; sourceTree = "<group>"; };
+		094C64571BDDD4DD0063CF42 /* GaoPOIAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoPOIAnnotationView.m; sourceTree = "<group>"; };
 		09667AD21BAFA1F900C99397 /* GaoBaseAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GaoBaseAnnotation.h; path = ../GaoBaseAnnotation.h; sourceTree = "<group>"; };
 		09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GaoBaseAnnotation.m; path = ../GaoBaseAnnotation.m; sourceTree = "<group>"; };
 		09667AD51BAFB0B700C99397 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -144,7 +148,6 @@
 		09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutNaviViewController.m; sourceTree = "<group>"; };
 		09DC82D21BCBD700007FCBE2 /* OutMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutMapViewController.h; sourceTree = "<group>"; };
 		09DC82D31BCBD700007FCBE2 /* OutMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutMapViewController.m; sourceTree = "<group>"; };
-		09DCE03B1BDA3C0600251FCB /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		09E852ED1BCE14F10068B017 /* OutBusRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutBusRouteViewController.h; sourceTree = "<group>"; };
 		09E852EE1BCE14F10068B017 /* OutBusRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutBusRouteViewController.m; sourceTree = "<group>"; };
 		1ACD651A3E696762EB3F8E97 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09DCE03C1BDA3C0600251FCB /* AMapSearchKit.framework in Frameworks */,
+				092DA9391BDDFDD20093AB71 /* AMapSearchKit.framework in Frameworks */,
 				BD3954DB09BA33770B734C15 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +259,8 @@
 				0929ABF31BBBDE2D00686046 /* MANaviAnnotationView.m */,
 				092A5AC91BC65B2200A57CCC /* GaoBaseAnnotationView.h */,
 				092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */,
+				094C64561BDDD4DD0063CF42 /* GaoPOIAnnotationView.h */,
+				094C64571BDDD4DD0063CF42 /* GaoPOIAnnotationView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,7 +352,7 @@
 		093090A01BABDC2200AA4E72 /* GaoMapSDK */ = {
 			isa = PBXGroup;
 			children = (
-				09DCE03B1BDA3C0600251FCB /* AMapSearchKit.framework */,
+				092DA9381BDDFDD20093AB71 /* AMapSearchKit.framework */,
 				0929ABC91BBBDE2D00686046 /* Models */,
 				0929ABE41BBBDE2D00686046 /* Utility */,
 				0929ABE71BBBDE2D00686046 /* Views */,
@@ -533,6 +538,7 @@
 				092A5ACB1BC65B2200A57CCC /* GaoBaseAnnotationView.m in Sources */,
 				0929ABFB1BBBDE2D00686046 /* CustomOverlay.m in Sources */,
 				0937D9C21BBA956800FF85AD /* GaoMapManager.m in Sources */,
+				094C64581BDDD4DD0063CF42 /* GaoPOIAnnotationView.m in Sources */,
 				0928F50B1BCCED1B0089CC96 /* OutTopBarView.m in Sources */,
 				0928F50E1BCCED690089CC96 /* OutNaviStartCell.m in Sources */,
 				0929AC0B1BBBDE2D00686046 /* MANaviAnnotationView.m in Sources */,
