@@ -39,4 +39,8 @@
 
 + (MAMapRect)minMapRectForAnnotations:(NSArray *)annotations;
 
++ (CLLocationCoordinate2D *)coordinatesForString:(NSString *)string
+                                 coordinateCount:(NSUInteger *)coordinateCount
+                                      parseToken:(NSString *)token;
+
 @end

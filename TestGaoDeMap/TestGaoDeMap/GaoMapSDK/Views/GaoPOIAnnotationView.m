@@ -30,7 +30,7 @@
     [self addSubview:self.annotationIcon];
     
     self.titlelabel = [[UILabel alloc] initWithFrame:CGRectMake(-50, 10, 100, 14)];
-    self.titlelabel.text = @"这是一个鸡巴";
+//    self.titlelabel.text = @"这是一个鸡巴";
     self.titlelabel.textAlignment = NSTextAlignmentCenter;
     self.titlelabel.font = [UIFont systemFontOfSize:10];
     self.titlelabel.textColor = [UIColor darkGrayColor];

@@ -9,7 +9,7 @@
 #import "MANaviRoute.h"
 #import "CommonUtility.h"
 
-#define kMANaviRouteReplenishPolylineFilter     8
+#define kMANaviRouteReplenishPolylineFilter     1
 
 @interface MANaviRoute()
 
@@ -140,14 +140,14 @@
     {
         [annotations addObjectsFromArray:walkingRoute.naviAnnotations];
     }
-
+    
     AMapBusLine *firstLine = [segment.buslines firstObject];
     MAPolyline *busLinePolyline = [MANaviRoute polylineForBusLine:firstLine];
     if (busLinePolyline != nil)
     {
         GaoNaviPolyline *naviPolyline = [[GaoNaviPolyline alloc] initWithPolyline:busLinePolyline];
         naviPolyline.type = MANaviAnnotationTypeBus;
-
+        
         [polylines addObject:naviPolyline];
         
         MANaviAnnotation * bus = [[MANaviAnnotation alloc] init];
@@ -188,9 +188,9 @@
 /* replenish. */
 
 + (void)replenishPolylinesForWalkingWith:(MAPolyline *)stepPolyline
-                           LastPolyline:(MAPolyline *)lastPolyline
-                              Polylines:(NSMutableArray *)polylines
-                                Walking:(AMapWalking *)walking
+                            LastPolyline:(MAPolyline *)lastPolyline
+                               Polylines:(NSMutableArray *)polylines
+                                 Walking:(AMapWalking *)walking
 {
     CLLocationCoordinate2D startCoor ;
     CLLocationCoordinate2D endCoor;
@@ -247,7 +247,7 @@
     {
         CLLocationCoordinate2D startCoor;
         CLLocationCoordinate2D endCoor;
-
+        
         MAPolyline *busLinePolyline = [self polylineForBusLine:[(lastSegment).buslines firstObject]];
         if (busLinePolyline != nil)
         {
@@ -338,14 +338,16 @@
 
 #pragma mark - Life Cycle
 
-+ (instancetype)naviRouteForTransit:(AMapTransit *)transit
++ (instancetype)naviRouteForTransit:(AMapTransit *)transit endCoor:(CLLocationCoordinate2D)endCoor startCoor:(CLLocationCoordinate2D)startCoor
 {
-    return [[self alloc] initWithTransit:transit];
+    MANaviRoute *route =  [[self alloc] initWithTransit:transit endCoor:endCoor startCoor:startCoor];
+    return route;
 }
 
-+ (instancetype)naviRouteForPath:(AMapPath *)path withNaviType:(MANaviAnnotationType)type
++ (instancetype)naviRouteForPath:(AMapPath *)path withNaviType:(MANaviAnnotationType)type endCoor:(CLLocationCoordinate2D)endCoor startCoor:(CLLocationCoordinate2D)startCoor
 {
-    return [[self alloc] initWithPath:path withNaviType:type];
+    MANaviRoute *route =  [[self alloc] initWithPath:path withNaviType:type endCoor:endCoor startCoor:startCoor];
+    return route;
 }
 
 + (instancetype)naviRouteForPolylines:(NSArray *)polylines andAnnotations:(NSArray *)annotations
@@ -366,9 +368,11 @@
     return self;
 }
 
-- (instancetype)initWithTransit:(AMapTransit *)transit
+- (instancetype)initWithTransit:(AMapTransit *)transit endCoor:(CLLocationCoordinate2D)endCoor startCoor:(CLLocationCoordinate2D)startCoor
 {
     self = [self init];
+    self.endCoor = endCoor;
+    self.startCoor = startCoor;
     
     if (self == nil)
     {
@@ -393,7 +397,15 @@
         }
         if (routeSegment.naviAnnotations.count != 0)
         {
-            [anntations addObjectsFromArray:routeSegment.naviAnnotations];
+            if (routeSegment.naviAnnotations.count == 1) {
+                [anntations addObject:routeSegment.naviAnnotations[0]];
+            }else {
+                [anntations addObject:routeSegment.naviAnnotations[0]];
+                id last = routeSegment.naviAnnotations[routeSegment.naviAnnotations.count -1];
+                [anntations addObject:last];
+            }
+            
+            //            [anntations addObjectsFromArray:routeSegment.naviAnnotations];
         }
         
         if (idx >0)
@@ -402,16 +414,47 @@
         }
     }];
     
+    if (transit.segments.count > 0) {
+        AMapWalking *walk = transit.segments.lastObject;
+        AMapWalking *startWalk = transit.segments.firstObject;
+        LineDashPolyline *endLine = nil, *startLine = nil;
+        
+        if ([walk isKindOfClass:[AMapSegment class]]) {
+            walk = [(AMapSegment *)(walk) walking];
+            endLine = [MANaviRoute replenishPolylineWithStart:CLLocationCoordinate2DMake(walk.destination.latitude, walk.destination.longitude) end:self.endCoor];
+        }else {
+            endLine = [MANaviRoute replenishPolylineWithStart:CLLocationCoordinate2DMake(walk.destination.latitude, walk.destination.longitude) end:self.endCoor];
+        }
+        
+        if ([startWalk isKindOfClass:[AMapSegment class]]) {
+            startWalk = [(AMapSegment *)(startWalk) walking];
+            startLine = [MANaviRoute replenishPolylineWithStart:CLLocationCoordinate2DMake(startWalk.origin.latitude, startWalk.origin.longitude) end:self.startCoor];
+        }else {
+            startLine = [MANaviRoute replenishPolylineWithStart:CLLocationCoordinate2DMake(startWalk.origin.latitude, startWalk.origin.longitude) end:self.startCoor];
+        }
+        
+        
+        if (startLine) {
+            [polylines insertObject:startLine atIndex:0];
+        }
+        
+        if (endLine) {
+            [polylines addObject:endLine];
+        }
+    }
+    
     self.routePolylines = polylines;
     self.naviAnnotations = anntations;
     
     return self;
-
+    
 }
 
-- (instancetype)initWithPath:(AMapPath *)path withNaviType:(MANaviAnnotationType)type
+- (instancetype)initWithPath:(AMapPath *)path withNaviType:(MANaviAnnotationType)type endCoor:(CLLocationCoordinate2D)endCoor startCoor:(CLLocationCoordinate2D)startCoor
 {
     self = [self init];
+    self.endCoor = endCoor;
+    self.startCoor = startCoor;
     
     if (self == nil)
     {
@@ -437,7 +480,7 @@
             
             [polylines addObject:naviPolyline];
             
-            if (idx > 0)
+            if (idx > 0 && type == MANaviAnnotationTypeBus)
             {
                 MANaviAnnotation * annotation = [[MANaviAnnotation alloc] init];
                 annotation.coordinate = MACoordinateForMapPoint(stepPolyline.points[0]);
@@ -449,11 +492,37 @@
             if (idx > 0)
             {
                 [MANaviRoute replenishPolylinesForPathWith:stepPolyline
-                                       lastPolyline:[MANaviRoute polylineForStep:[path.steps objectAtIndex:idx-1]]
-                                          Polylines:polylines];
+                                              lastPolyline:[MANaviRoute polylineForStep:[path.steps objectAtIndex:idx-1]]
+                                                 Polylines:polylines];
             }
         }
     }];
+    
+    if (path.steps.count > 0) {
+        AMapStep *walk = path.steps.lastObject;
+        AMapStep *startStep = path.steps.firstObject;
+        
+        NSUInteger count = 0;
+        CLLocationCoordinate2D *coordinates = [CommonUtility coordinatesForString:walk.polyline coordinateCount:&count parseToken:@";"];
+        if (count > 0) {
+            CLLocationCoordinate2D lastCoor = coordinates[count-1];
+            LineDashPolyline *line = [MANaviRoute replenishPolylineWithStart:lastCoor end:self.endCoor];
+            if (line) {
+                [polylines addObject:line];
+            }
+        }
+        
+        coordinates = [CommonUtility coordinatesForString:startStep.polyline coordinateCount:&count parseToken:@";"];
+        if (count > 0) {
+            CLLocationCoordinate2D firstCoor = coordinates[0];
+            LineDashPolyline *line = [MANaviRoute replenishPolylineWithStart:firstCoor end:self.startCoor];
+            if (line) {
+                [polylines insertObject:line atIndex:0];
+            }
+        }
+        
+    }
+    
     
     self.routePolylines = polylines;
     self.naviAnnotations = naviAnnotations;

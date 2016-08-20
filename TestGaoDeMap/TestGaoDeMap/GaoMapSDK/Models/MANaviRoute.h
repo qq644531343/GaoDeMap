@@ -30,12 +30,19 @@
 
 - (void)setNaviAnnotationVisibility:(BOOL)visible;
 
-+ (instancetype)naviRouteForTransit:(AMapTransit *)transit;
-+ (instancetype)naviRouteForPath:(AMapPath *)path withNaviType:(MANaviAnnotationType)type;
++ (instancetype)naviRouteForTransit:(AMapTransit *)transit endCoor:(CLLocationCoordinate2D)endCoor startCoor:(CLLocationCoordinate2D)startCoor;
+
++ (instancetype)naviRouteForPath:(AMapPath *)path withNaviType:(MANaviAnnotationType)type endCoor:(CLLocationCoordinate2D)endCoor startCoor:(CLLocationCoordinate2D)startCoor;
+
 + (instancetype)naviRouteForPolylines:(NSArray *)polylines andAnnotations:(NSArray *)annotations;
 
-- (instancetype)initWithTransit:(AMapTransit *)transit;
-- (instancetype)initWithPath:(AMapPath *)path withNaviType:(MANaviAnnotationType)type;
+- (instancetype)initWithTransit:(AMapTransit *)transit endCoor:(CLLocationCoordinate2D)endCoor startCoor:(CLLocationCoordinate2D)startCoor;
+
+- (instancetype)initWithPath:(AMapPath *)path withNaviType:(MANaviAnnotationType)type endCoor:(CLLocationCoordinate2D)endCoor startCoor:(CLLocationCoordinate2D)startCoor;
+
 - (instancetype)initWithPolylines:(NSArray *)polylines andAnnotations:(NSArray *)annotations;
+
+@property (nonatomic,readwrite) CLLocationCoordinate2D endCoor;
+@property (nonatomic,readwrite) CLLocationCoordinate2D startCoor;
 
 @end

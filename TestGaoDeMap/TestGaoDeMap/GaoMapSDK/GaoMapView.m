@@ -256,15 +256,17 @@
     //自驾
     if (type == 1) {
         [self.searchManager searchNaviDriveWithStart:point1 dest:point2 strategy:strategy finish:^(NSError *error, AMapRoute *route) {
-            XLog(@"自驾路线：%ld条",route.paths.count);
             if (block) {
                 block(route);
             }
             if (route.paths.count > 0) {
-                MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeDrive];
+                [self addMyAnnotationBase:[NSArray arrayWithObjects:src,dest, nil]];
+                [self showAnnotations:[NSArray arrayWithObjects:src,dest, nil] animated:NO];
+                self.zoomLevel -= 0.5;
+                MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeDrive endCoor:dest.coordinate startCoor:src.coordinate];
                 [navi addToMapView:self];
             }else {
-                
+                NSLog(@"没有查询到自驾结果");
             }
         }];
 
@@ -272,15 +274,17 @@
     //公交
         [self.searchManager searchNaviBusWithStart:point1 dest:point2 strategy:strategy cityCode:self.mapManager.userAddress.addressComponent.citycode finish:^(NSError *error, AMapRoute *route) {
             
-            XLog(@"公交路线：%ld条",route.transits.count);
             if (block) {
                 block(route);
             }
             if (route.transits.count > 0) {
-                MANaviRoute *navi = [MANaviRoute naviRouteForTransit:route.transits[0]];
+                [self addMyAnnotationBase:[NSArray arrayWithObjects:src,dest, nil]];
+                [self showAnnotations:[NSArray arrayWithObjects:src,dest, nil] animated:NO];
+                self.zoomLevel -= 0.5;
+                MANaviRoute *navi = [MANaviRoute naviRouteForTransit:route.transits[0] endCoor:dest.coordinate startCoor:src.coordinate];
                 [navi addToMapView:self];
             }else {
-                
+               NSLog(@"没有查询到公交结果");
             }
         }];
         
@@ -288,15 +292,17 @@
      //步行
         [self.searchManager searchNaviWalkWithStart:point1 dest:point2 finish:^(NSError *error, AMapRoute *route) {
             
-            XLog(@"步行路线：%ld条",route.paths.count);
             if (block) {
                 block(route);
             }
             if (route.paths.count > 0) {
-                MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeWalking];
+                [self addMyAnnotationBase:[NSArray arrayWithObjects:src,dest, nil]];
+                [self showAnnotations:[NSArray arrayWithObjects:src,dest, nil] animated:NO];
+                self.zoomLevel -= 0.5;
+                MANaviRoute *navi = [MANaviRoute naviRouteForPath:route.paths[0] withNaviType:MANaviAnnotationTypeWalking endCoor:dest.coordinate startCoor:src.coordinate];
                 [navi addToMapView:self];
             }else {
-               
+                 NSLog(@"没有查询到步行结果");
             }
         }];
     }

@@ -9,6 +9,7 @@
 #import "GaoMapManager.h"
 #import "GaoMapHeaders.h"
 #import "CusAnnotationView.h"
+#import "LineDashPolyline.h"
 
 
 #import "GaoNaviPolyline.h"
@@ -30,9 +31,9 @@
         }
     }
     
-    _selectAnnotationView.color = GaoAnnoColorBlue;
+    //_selectAnnotationView.color = GaoAnnoColorBlue;
     _selectAnnotationView = selectAnnotation;
-    selectAnnotation.color = GaoAnnoColorRed;
+    //selectAnnotation.color = GaoAnnoColorRed;
 }
 
 #pragma mark - Annotation
@@ -124,15 +125,22 @@
         return;
     }
     
-     XLog(@"%@", [view.annotation class]);
+    XLog(@"%@", [view.annotation class]);
     if([view isKindOfClass:[GaoBaseAnnotationView class]]){
         self.selectAnnotationView = (GaoBaseAnnotationView *)view;
         if (self.clickedAnnotation) {
             self.clickedAnnotation(view.annotation, view);
         }
-
+        
     }
-}
+    
+    if ([view isKindOfClass:[GaoPOIAnnotationView class]]) {
+        self.selectAnnotationView = view;
+        if (self.clickedAnnotation) {
+            self.clickedAnnotation(view.annotation, view);
+        }
+        //[self.map setCenterCoordinate:[view.annotation coordinate] animated:YES];
+    }}
 
 /*!
  @brief 当取消选中一个annotation views时，调用此接口
@@ -183,6 +191,13 @@
         accuracyCircleView.strokeColor  = [UIColor blueColor];
         accuracyCircleView.fillColor    = [UIColor colorWithRed:1 green:0 blue:0 alpha:.1];
         return accuracyCircleView;
+    }else if([overlay isKindOfClass:[LineDashPolyline class]]) {
+        MAPolylineView *polylineRenderer = [[MAPolylineView alloc] initWithPolyline:((LineDashPolyline *)overlay).polyline];
+        polylineRenderer.lineWidth   = 4;
+        polylineRenderer.strokeColor = kMAOverlayViewDefaultStrokeColor;
+        polylineRenderer.fillColor = [UIColor darkGrayColor];
+        polylineRenderer.lineDash = YES;
+        return polylineRenderer;
     }
 
     return nil;
@@ -250,6 +265,8 @@
     if (pois.count == 0)
     {
         if (self.clickedAnnotation) {
+            [self.map cleanMapView];
+            self.selectAnnotationView = nil;
             self.clickedAnnotation(nil,nil);
         }
         return;
@@ -257,7 +274,7 @@
     
     MATouchPoi *touch = [pois lastObject];
     GaoBaseAnnotation *annotation = [[GaoBaseAnnotation alloc] init];
-    annotation.coordinate = CLLocationCoordinate2DMake(30.280543, 120.029016);//touch.coordinate;
+    annotation.coordinate = touch.coordinate;
     annotation.title = touch.name;
     [self.map cleanMapView];
     [self.map addMyAnnotationBase:[NSArray arrayWithObject:annotation]];
