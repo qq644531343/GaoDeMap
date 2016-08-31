@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09189AB61BCE30F60097A3D7 /* OutNaviBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09189AB51BCE30F60097A3D7 /* OutNaviBusCell.m */; settings = {ASSET_TAGS = (); }; };
-		0928F5031BCCEAE50089CC96 /* path.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0928F5021BCCEAE50089CC96 /* path.txt */; settings = {ASSET_TAGS = (); }; };
-		0928F50A1BCCED1B0089CC96 /* OutBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5071BCCED1B0089CC96 /* OutBottomView.m */; settings = {ASSET_TAGS = (); }; };
-		0928F50B1BCCED1B0089CC96 /* OutTopBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5091BCCED1B0089CC96 /* OutTopBarView.m */; settings = {ASSET_TAGS = (); }; };
-		0928F50E1BCCED690089CC96 /* OutNaviStartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F50D1BCCED690089CC96 /* OutNaviStartCell.m */; settings = {ASSET_TAGS = (); }; };
-		0928F5111BCCEEE10089CC96 /* OutNaviDetailBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5101BCCEEE10089CC96 /* OutNaviDetailBaseCell.m */; settings = {ASSET_TAGS = (); }; };
+		09189AB61BCE30F60097A3D7 /* OutNaviBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09189AB51BCE30F60097A3D7 /* OutNaviBusCell.m */; };
+		0928F5031BCCEAE50089CC96 /* path.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0928F5021BCCEAE50089CC96 /* path.txt */; };
+		0928F50A1BCCED1B0089CC96 /* OutBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5071BCCED1B0089CC96 /* OutBottomView.m */; };
+		0928F50B1BCCED1B0089CC96 /* OutTopBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5091BCCED1B0089CC96 /* OutTopBarView.m */; };
+		0928F50E1BCCED690089CC96 /* OutNaviStartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F50D1BCCED690089CC96 /* OutNaviStartCell.m */; };
+		0928F5111BCCEEE10089CC96 /* OutNaviDetailBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0928F5101BCCEEE10089CC96 /* OutNaviDetailBaseCell.m */; };
 		0929AB911BBB829000686046 /* GaoMapSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929AB901BBB829000686046 /* GaoMapSearchManager.m */; };
 		0929AB931BBB84A700686046 /* gaopoi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0929AB921BBB84A700686046 /* gaopoi.plist */; };
 		0929ABF91BBBDE2D00686046 /* AnimatedAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABCD1BBBDE2D00686046 /* AnimatedAnnotation.m */; };
@@ -29,10 +29,10 @@
 		0929AC081BBBDE2D00686046 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABED1BBBDE2D00686046 /* CustomCalloutView.m */; };
 		0929AC091BBBDE2D00686046 /* FaceOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABEF1BBBDE2D00686046 /* FaceOverlayView.m */; };
 		0929AC0B1BBBDE2D00686046 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929ABF31BBBDE2D00686046 /* MANaviAnnotationView.m */; };
-		092A5ACB1BC65B2200A57CCC /* GaoBaseAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
-		092A5ACF1BC667F800A57CCC /* OutSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
-		092BA55B1BCB5F6800FD2CBA /* OutRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */; settings = {ASSET_TAGS = (); }; };
-		092DA9391BDDFDD20093AB71 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092DA9381BDDFDD20093AB71 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
+		092A5ACB1BC65B2200A57CCC /* GaoBaseAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACA1BC65B2200A57CCC /* GaoBaseAnnotationView.m */; };
+		092A5ACF1BC667F800A57CCC /* OutSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092A5ACE1BC667F800A57CCC /* OutSearchViewController.m */; };
+		092BA55B1BCB5F6800FD2CBA /* OutRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092BA55A1BCB5F6800FD2CBA /* OutRouteViewController.m */; };
+		092DA9391BDDFDD20093AB71 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092DA9381BDDFDD20093AB71 /* AMapSearchKit.framework */; };
 		0930907C1BABD58A00AA4E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907B1BABD58A00AA4E72 /* main.m */; };
 		0930907F1BABD58A00AA4E72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930907E1BABD58A00AA4E72 /* AppDelegate.m */; };
 		093090851BABD58A00AA4E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093090831BABD58A00AA4E72 /* Main.storyboard */; };
@@ -44,13 +44,13 @@
 		0937D9BC1BBA8BC100FF85AD /* GaoMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BB1BBA8BC100FF85AD /* GaoMapView.m */; };
 		0937D9BF1BBA90B400FF85AD /* GaoMapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9BE1BBA90B400FF85AD /* GaoMapTool.m */; };
 		0937D9C21BBA956800FF85AD /* GaoMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0937D9C11BBA956800FF85AD /* GaoMapManager.m */; };
-		094C64581BDDD4DD0063CF42 /* GaoPOIAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C64571BDDD4DD0063CF42 /* GaoPOIAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
+		094C64581BDDD4DD0063CF42 /* GaoPOIAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C64571BDDD4DD0063CF42 /* GaoPOIAnnotationView.m */; };
 		09667AD41BAFA1F900C99397 /* GaoBaseAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09667AD31BAFA1F900C99397 /* GaoBaseAnnotation.m */; };
 		09667AD61BAFB0B700C99397 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09667AD51BAFB0B700C99397 /* 1.jpg */; };
-		0986C69B1BCDF377009B9322 /* OutBusInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986C69A1BCDF377009B9322 /* OutBusInfoCell.m */; settings = {ASSET_TAGS = (); }; };
-		09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
-		09DC82D41BCBD700007FCBE2 /* OutMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC82D31BCBD700007FCBE2 /* OutMapViewController.m */; settings = {ASSET_TAGS = (); }; };
-		09E852EF1BCE14F10068B017 /* OutBusRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E852EE1BCE14F10068B017 /* OutBusRouteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0986C69B1BCDF377009B9322 /* OutBusInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986C69A1BCDF377009B9322 /* OutBusInfoCell.m */; };
+		09CC99A61BC7CFF8009472E2 /* OutNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC99A51BC7CFF8009472E2 /* OutNaviViewController.m */; };
+		09DC82D41BCBD700007FCBE2 /* OutMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC82D31BCBD700007FCBE2 /* OutMapViewController.m */; };
+		09E852EF1BCE14F10068B017 /* OutBusRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E852EE1BCE14F10068B017 /* OutBusRouteViewController.m */; };
 		BD3954DB09BA33770B734C15 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB895F2322D4EA44F816DB86 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -393,6 +393,7 @@
 				093090731BABD58A00AA4E72 /* Frameworks */,
 				093090741BABD58A00AA4E72 /* Resources */,
 				B53B25E9875CBC195C1515C2 /* Copy Pods Resources */,
+				00C9CD906122E4F9F7EC1654 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -483,6 +484,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00C9CD906122E4F9F7EC1654 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B53B25E9875CBC195C1515C2 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
