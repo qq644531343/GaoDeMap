@@ -24,7 +24,7 @@
 
 +(GaoMapView *)getMapViewWithFrame:(CGRect)frame parentView:(UIView *)parentView
 {
-    GaoMapView *map = [[GaoMapView alloc] initWithFrame:frame];
+    GaoMapView *map = [[GaoMapConfig sharedConfig] getMapViewWithFrame:frame];
     [parentView addSubview:map];
     return map;
 }

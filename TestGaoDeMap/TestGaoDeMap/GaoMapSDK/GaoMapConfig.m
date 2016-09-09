@@ -11,6 +11,7 @@
 
 @interface GaoMapConfig ()
 @property (nonatomic,strong) NSString *tableId;
+@property (nonatomic, strong) GaoMapView *map;
 @end
 
 @implementation GaoMapConfig
@@ -40,6 +41,16 @@
     [MAMapServices sharedServices].apiKey = GAO_APP_KEY;
     [AMapSearchServices sharedServices].apiKey = GAO_APP_KEY;
     self.tableId = GAO_CLOUD_TABLEID;
+}
+
+-(id)getMapViewWithFrame:(CGRect)frame {
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        self.map = [[GaoMapView alloc] init];
+    });
+    self.map.frame = frame;
+    return self.map;
 }
 
 #pragma mark -

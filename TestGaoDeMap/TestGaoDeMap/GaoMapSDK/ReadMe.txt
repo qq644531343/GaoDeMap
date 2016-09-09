@@ -20,7 +20,7 @@
     <key>NSLocationAlwaysUsageDescription</key>
         <string>请允许喵街使用GPS</string>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <true/>
+    <string>请允许喵街使用GPS</string>
 
 5， 针对iOS9 需在info.plist中配置如下允许http
     <key>NSAppTransportSecurity</key>
