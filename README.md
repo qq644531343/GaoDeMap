@@ -13,9 +13,13 @@ iOS高德地图的封装和使用
 `
 #使用代码
 将GaoMapSDK拷贝到你的工程中，在podfile中引入
+
 pod 'AMapNavi' , '1.3.1' #导航，包含AMap3DMap
+
 pod 'AMapCloudMap'
+
 <em>注意：如果你的工程不是cocoapods管理的，直接拷贝demo中的AMapCloudKit.framework和AMapNaviKit.framework到你工程即可</em>
+
 **根据Readme.txt对工程进行配置**
 具体使用，请参看demo。
 
@@ -51,8 +55,11 @@ pod 'AMapCloudMap'
 
 ##Api Docs
 GaoMapView：地图View
+
 GaoMapManager：地图覆盖物、定位
+
 GaoMapSearchManager：搜索、导航
+
 
 ```
 /**
