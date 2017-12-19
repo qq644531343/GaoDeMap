@@ -1,6 +1,12 @@
 # GaoDeMap
 iOS高德地图的封装和使用
 
+```
+clone后， pod install报错的朋友
+请直接下载这个https://github.com/qq644531343/GaoDeMap/releases/download/1.0/GaoDeMap.zip
+然后解压后，打开workspace运行即可
+```
+
 采用pod进行管理
 
 主要封装了地图、POI、导航、搜索、编码等
